@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern History Timeline — ChronoLog</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- TimelineJS3 CSS from Knight Lab CDN -->
+  <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+
+  <!-- Custom Theme Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <span class="brand-icon">🏛️</span>
+      <span class="brand-title">ChronoLog</span>
+      <span class="brand-sub">Reading Notes</span>
+    </a>
+
+    <!-- Era Switcher Navigation -->
+    <nav class="era-nav">
+      <a href="ancient.html" class="era-link">Ancient</a>
+      <a href="medieval.html" class="era-link">Medieval</a>
+      <a href="modern.html" class="era-link active">Modern</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <span id="event-count" class="event-count-pill">Loading...</span>
+    </div>
+  </header>
+
+  <!-- TimelineJS Mount Area -->
+  <main class="timeline-wrapper">
+    <div id="timeline-embed"></div>
+  </main>
+
+  <!-- TimelineJS CDN Script -->
+  <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+  <!-- Data and Init Scripts -->
+  <script src="js/modern-data.js"></script>
+  <script src="js/timeline-init.js"></script>
+</body>
+</html>

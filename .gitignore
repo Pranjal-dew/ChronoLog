@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & temp files
+*.log
+temp_*
+*.tmp
+
+# Dependency directories
+node_modules/
+.venv/
+
+# Private local tools
+editor.html
