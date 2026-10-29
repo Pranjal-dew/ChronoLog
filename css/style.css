@@ -582,13 +582,25 @@ html, body {
 
 /* Timeline Navigation Area */
 .tl-timenav {
-  background: var(--bg-secondary) !important;
-  border-top: 1px solid var(--border-color) !important;
+  background: #0d0f14 !important;
+  border-top: 1px solid rgba(197, 160, 89, 0.22) !important;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.45) !important;
+}
+
+.tl-timeaxis {
+  background: transparent !important;
 }
 
 .tl-timeaxis-tick-text {
-  color: var(--text-muted) !important;
-  font-size: 0.75rem !important;
+  color: rgba(220, 215, 201, 0.65) !important;
+  font-family: var(--font-sans, 'Inter', sans-serif) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.tl-timeaxis-line {
+  background-color: rgba(197, 160, 89, 0.18) !important;
 }
 
 .tl-timegroup-message {
@@ -627,22 +639,141 @@ html, body {
   background-color: rgba(197, 160, 89, 0.35) !important;
 }
 
-/* TimelineJS Era Bands (Horizontal phase spans across the axis) */
-.tl-era {
-  background: rgba(197, 160, 89, 0.09) !important;
-  border-top: 2px solid var(--accent-gold) !important;
-  border-bottom: 1px solid rgba(197, 160, 89, 0.25) !important;
-  border-radius: 3px !important;
+/* ==========================================================================
+   TimelineJS Era Bands (Bottom Time Navigation Axis) — Modern Glass Redesign
+   ========================================================================== */
+
+.tl-timeera {
+  height: 52px !important;
+  bottom: 0px !important;
+  z-index: 6 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
 }
 
-.tl-era .tl-headline,
-.tl-era-title {
-  color: var(--accent-gold) !important;
-  font-family: var(--font-serif) !important;
-  font-size: 0.72rem !important;
+/* Glass backdrop for era bands */
+.tl-timeera .tl-timeera-background {
+  border-top: 2px solid rgba(197, 160, 89, 0.5) !important;
+  border-right: 1px solid rgba(197, 160, 89, 0.15) !important;
+  border-left: 1px solid rgba(197, 160, 89, 0.15) !important;
+  border-bottom: none !important;
+  border-radius: 6px 6px 0 0 !important;
+  box-sizing: border-box !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Phase 1: Company Rule (Bronze Gold) */
+.tl-timeera.tl-timeera-color0 .tl-timeera-background {
+  background: linear-gradient(180deg, rgba(197, 160, 89, 0.18) 0%, rgba(197, 160, 89, 0.05) 100%) !important;
+  border-top-color: #c5a059 !important;
+}
+
+/* Phase 2: Crown Rule (Regal Amber) */
+.tl-timeera.tl-timeera-color1 .tl-timeera-background {
+  background: linear-gradient(180deg, rgba(217, 131, 36, 0.18) 0%, rgba(217, 131, 36, 0.05) 100%) !important;
+  border-top-color: #d98324 !important;
+}
+
+/* Phase 3: Freedom Movement (Emerald Bronze) */
+.tl-timeera.tl-timeera-color2 .tl-timeera-background {
+  background: linear-gradient(180deg, rgba(74, 155, 122, 0.20) 0%, rgba(74, 155, 122, 0.05) 100%) !important;
+  border-top-color: #4a9b7a !important;
+}
+
+/* Hover and Active highlights on era bands */
+.tl-timeera.tl-timeera-active .tl-timeera-background,
+.tl-timeera:hover .tl-timeera-background {
+  background: linear-gradient(180deg, rgba(197, 160, 89, 0.30) 0%, rgba(197, 160, 89, 0.10) 100%) !important;
+  border-top: 3px solid #f0cc70 !important;
+  box-shadow: 0 -4px 18px rgba(197, 160, 89, 0.25) !important;
+}
+
+/* Content Container & Text Alignment */
+.tl-timeera .tl-timeera-content-container {
+  border: none !important;
+  background: transparent !important;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.tl-timeera .tl-timeera-content {
+  padding: 6px 14px !important;
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.tl-timeera .tl-timeera-text {
+  height: auto !important;
+  width: 100% !important;
+  overflow: visible !important;
+  position: static !important;
+}
+
+.tl-timeera .tl-timeera-text h2.tl-headline {
+  position: static !important;
+  bottom: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 2px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--font-serif, 'Cinzel', serif) !important;
+  color: #f7f4ea !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95), 0 0 2px rgba(0, 0, 0, 0.9) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Remove default KnightLab fadeout overlay */
+.tl-timeera .tl-timeera-content-container .tl-timeera-content .tl-timeera-text h2.tl-headline.tl-headline-fadeout:after {
+  display: none !important;
+}
+
+/* Structured Title & Date Spans inside Era */
+.tl-era-phase-title {
+  font-size: 0.78rem !important;
   font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.06em !important;
+  color: #f5eedc !important;
+  display: block !important;
+  line-height: 1.2 !important;
+}
+
+.tl-era-phase-dates {
+  font-family: var(--font-sans, 'Inter', sans-serif) !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+  color: var(--accent-gold, #c5a059) !important;
+  opacity: 0.92 !important;
+  display: block !important;
+  line-height: 1.1 !important;
+}
+
+.tl-timeera:hover .tl-era-phase-title,
+.tl-timeera.tl-timeera-active .tl-era-phase-title {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(197, 160, 89, 0.6) !important;
+}
+
+.tl-timeera:hover .tl-era-phase-dates,
+.tl-timeera.tl-timeera-active .tl-era-phase-dates {
+  color: #f0cc70 !important;
 }
 
 /* ==========================================================================

@@ -226,10 +226,11 @@ function setupEraNavigation(eras, events) {
     }
 
     const targetSlide = firstEventIdx !== -1 ? firstEventIdx + 1 : 1;
+    const cleanHeadline = (era.text?._rawHeadline || era.text?.headline || `Era ${idx + 1}`).replace(/<[^>]*>/g, '').trim();
 
     eraSlideMap.push({
       eraIndex: idx,
-      headline: era.text?.headline || `Era ${idx + 1}`,
+      headline: cleanHeadline,
       startYear: sYear,
       endYear: eYear,
       targetSlide: targetSlide
@@ -239,8 +240,8 @@ function setupEraNavigation(eras, events) {
     pill.className = 'era-pill';
     pill.setAttribute('data-era-index', idx);
     pill.setAttribute('type', 'button');
-    pill.setAttribute('title', `Jump to Era ${idx + 1}: ${era.text?.headline || ''}`);
-    pill.innerHTML = `<span class="era-pill-num">${idx + 1}</span><span class="era-pill-title">${era.text?.headline || `Era ${idx + 1}`}</span>`;
+    pill.setAttribute('title', `Jump to Era ${idx + 1}: ${cleanHeadline}`);
+    pill.innerHTML = `<span class="era-pill-num">${idx + 1}</span><span class="era-pill-title">${cleanHeadline}</span>`;
 
     pill.addEventListener('click', () => {
       if (window.timeline) {
@@ -256,14 +257,40 @@ function setupEraNavigation(eras, events) {
 
 function updateActiveEraPill(activeEraIndex) {
   const container = document.getElementById('era-pills-container');
-  if (!container) return;
-  const pills = container.querySelectorAll('.era-pill');
-  pills.forEach((p, i) => {
-    if (i === activeEraIndex) {
-      p.classList.add('active');
-    } else {
-      p.classList.remove('active');
+  if (container) {
+    const pills = container.querySelectorAll('.era-pill');
+    pills.forEach((p, i) => {
+      if (i === activeEraIndex) {
+        p.classList.add('active');
+      } else {
+        p.classList.remove('active');
+      }
+    });
+  }
+
+  // Synchronize active glow on the bottom time axis era bands
+  const axisEras = document.querySelectorAll('.tl-timeera');
+  axisEras.forEach((el, i) => {
+    el.classList.toggle('tl-timeera-active', i === activeEraIndex);
+  });
+}
+
+function bindAxisEraInteractivity() {
+  const axisEras = document.querySelectorAll('.tl-timeera');
+  axisEras.forEach((el, idx) => {
+    if (el.dataset.boundClick) return;
+    el.dataset.boundClick = 'true';
+    if (eraSlideMap[idx]) {
+      el.setAttribute('title', `Click to jump to: ${eraSlideMap[idx].headline}`);
     }
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (eraSlideMap[idx] && window.timeline) {
+        window.timeline.goTo(eraSlideMap[idx].targetSlide);
+        updateActiveEraPill(idx);
+        syncActiveSlideContext();
+      }
+    });
   });
 }
 
@@ -307,8 +334,9 @@ function syncActiveSlideContext() {
         badgeBar.className = 'slide-context-bar';
 
         if (matchingEraIdx !== -1 && currentTimelineData.eras && currentTimelineData.eras[matchingEraIdx]) {
-          const eraHeadline = currentTimelineData.eras[matchingEraIdx].text?.headline || 'Modern Era';
-          const eraShort = eraHeadline.split('(')[0].trim();
+          const eraData = currentTimelineData.eras[matchingEraIdx];
+          const eraHeadline = eraData.text?.headline || 'Modern Era';
+          const eraShort = eraData.text?._titleOnly || eraHeadline.replace(/<[^>]*>/g, '').split('(')[0].trim();
           badgeBar.innerHTML += `<span class="slide-badge slide-badge-era">${eraShort}</span>`;
         }
 
@@ -460,10 +488,38 @@ function normalizeEventDisplayDates(events) {
   });
 }
 
+function normalizeEraHeadlines(eras) {
+  if (!Array.isArray(eras)) return;
+  eras.forEach((era, idx) => {
+    if (!era.text) era.text = {};
+    const rawHeadline = era.text.headline || `Era ${idx + 1}`;
+    const cleanHeadline = rawHeadline.replace(/<[^>]*>/g, '').trim();
+
+    // Match e.g. "Decline of Mughals & Company Rule (1707–1857)"
+    const match = cleanHeadline.match(/^(.*?)(?:\s*\((.*?)\))?$/);
+    const title = match && match[1] ? match[1].trim() : cleanHeadline;
+    const dates = (match && match[2]) ? match[2].trim() : (era.start_date?.year && era.end_date?.year ? `${era.start_date.year} – ${era.end_date.year}` : '');
+
+    era.text._rawHeadline = cleanHeadline;
+    era.text._titleOnly = title;
+    era.text._dateRange = dates;
+
+    // Structured two-line label for the bottom axis
+    if (dates) {
+      era.text.headline = `<span class="tl-era-phase-title">${title}</span><span class="tl-era-phase-dates">${dates}</span>`;
+    } else {
+      era.text.headline = `<span class="tl-era-phase-title">${title}</span>`;
+    }
+  });
+}
+
 function renderTimeline(data, isLive = false) {
   currentTimelineData = data;
   if (data.events) {
     normalizeEventDisplayDates(data.events);
+  }
+  if (data.eras) {
+    normalizeEraHeadlines(data.eras);
   }
   const eventCountEl = document.getElementById('event-count');
   if (eventCountEl && data.events) {
@@ -479,10 +535,11 @@ function renderTimeline(data, isLive = false) {
       initial_zoom: 2,
       scale_factor: 1.5,
       timenav_position: 'bottom',
-      timenav_height_percentage: 38,
-      timenav_mobile_height_percentage: 42,
+      timenav_height_percentage: 40,
+      timenav_mobile_height_percentage: 45,
+      timenav_height_min: 180,
       slide_padding_lr: 24,
-      optimal_tick_width: 80,
+      optimal_tick_width: 90,
       duration: 500
     };
 
@@ -490,10 +547,12 @@ function renderTimeline(data, isLive = false) {
 
     window.timeline.on('ready', function () {
       syncActiveSlideContext();
+      bindAxisEraInteractivity();
     });
 
     window.timeline.on('change', function () {
       syncActiveSlideContext();
+      bindAxisEraInteractivity();
     });
   }
 }
