@@ -1,89 +1,157 @@
 /**
- * Modern History Timeline Data (Offline Fallback & Local Cache)
+ * Modern History Timeline Data (Offline Fallback & Local Storage)
  * Spectrum's Modern History of India (1707 - 1947)
  */
 
 const modernTimelineData = {
-  title: {
-    media: {
-      url: "https://youtu.be/zN8pjeLSzUc?si=vrna3RgLlKf3kka3",
-      credit: "StudyIAS"
+  "title": {
+    "media": {
+      "url": "https://youtu.be/zN8pjeLSzUc?si=vrna3RgLlKf3kka3",
+      "credit": "StudyIAS"
     },
-    text: {
-      headline: "Modern History (1707 – 1947)",
-      text: "<p>Spectrum’s Modern History covers the history of India from the decline of the Mughal Empire to Independence (1707 to 1947).</p><p><em>Reading notes, key leaders, and pivotal national movements.</em></p>"
+    "text": {
+      "headline": "Modern History (1707 – 1947)",
+      "text": "<p>Spectrum’s Modern History covers the history of India from the decline of the Mughal Empire to Independence (1707 to 1947).</p><p><em>Reading notes, key leaders, and pivotal national movements.</em></p>"
     }
   },
-  events: [
+  "events": [
     {
-      start_date: { year: "1869", month: "10", day: "2" },
-      end_date: { year: "1948", month: "1", day: "30" },
-      text: {
-        headline: "Mahatma Gandhi",
-        text: `<p>Mohandas Karamchand Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule, and whose legacy would later inspire movements for civil rights and freedom across the world.</p>`
+      "id": "evt_0_1869",
+      "start_date": {
+        "year": "1869",
+        "month": "10",
+        "day": "2"
       },
-      media: {
-        url: "https://youtu.be/codWemzsW40?si=6F3PDaZoeCZsHuv6"
+      "text": {
+        "headline": "Mahatma Gandhi",
+        "text": "<p>Mohandas Karamchand Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule, and whose legacy would later inspire movements for civil rights and freedom across the world.</p>\n<div class=\"book-citation\">📖 <strong>Book Note:</strong> Spectrum's Modern India</div>"
       },
-      group: "Gandhi"
-    },
-    {
-      start_date: { year: "1889", month: "11", day: "14" },
-      end_date: { year: "1964", month: "5", day: "27" },
-      text: {
-        headline: "Jawahar lal Nehru",
-        text: `<p>Jawaharlal Nehru was an Indian lawyer, anti-colonial nationalist, secular humanist, social democrat, and statesman who was a central figure in India during the middle of the 20th century. Nehru was a principal leader of the Indian nationalist movement in the 1930s and 1940s.</p>`
+      "end_date": {
+        "year": "1948"
       },
-      group: "Nehru"
-    },
-    {
-      start_date: { year: "1897", month: "1", day: "23" },
-      end_date: { year: "1945", month: "8", day: "18" },
-      text: {
-        headline: "Subhash Chandra Bose",
-        text: `<p>Subhas Chandra Bose was an Indian anti-colonial nationalist whose defiance of British authority in India made him a hero among many Indians, but his wartime alliances with Nazi Germany and the Empire of Japan left a legacy vexed by authoritarianism, antisemitism, and military failure.</p>`
+      "group": "Gandhi",
+      "media": {
+        "url": "https://youtu.be/codWemzsW40?si=6F3PDaZoeCZsHuv6"
       },
-      media: {
-        url: "https://shwetankspad.com/wp-content/uploads/2015/01/bose.jpg?w=1440",
-        credit: "Wiki"
-      },
-      group: "Bose"
-    },
-    {
-      start_date: { year: "1919", month: "4", day: "13" },
-      text: {
-        headline: "Jallianwala Bagh massacre",
-        text: `<p>Jallianwala Bagh is a historic garden and memorial of national importance close to the Golden Temple complex in Amritsar, Punjab, India, preserved in the memory of those wounded and killed in the Jallianwala Bagh Massacre that took place on the site on the festival of Baisakhi Day.</p>`
-      },
-      media: {
-        url: "https://youtu.be/twxfswoZhFM?si=JiyZVSEch1diosCz",
-        credit: "YouTube"
+      "background": {
+        "color": "#409c5b"
       }
+    },
+    {
+      "id": "evt_1793266634084",
+      "start_date": {
+        "year": "1876",
+        "month": "12",
+        "day": "25"
+      },
+      "text": {
+        "headline": "Muhammad Ali Jinnah",
+        "text": "<p>Muhammad Ali Jinnah was born into a Muslim family rather than being a convert himself, though his ancestral roots trace back to a Hindu background. His paternal grandfather, Premjibhai Meghji Thakkar, belonged to a prosperous Hindu Lohana family from Paneli Moti village in Gujarat. After entering the fish and non-vegetarian trade, Premjibhai was socially excommunicated by his orthodox community, which ultimately led him to convert to the Ismaili Khoja branch of Islam. His son, Jinnahbhai Poonja (Jinnah's father), was raised as a Muslim and migrated to Karachi, where Jinnah was born in 1876. While Jinnah grew up within the Ismaili Khoja tradition, he later adopted mainstream Twelver Shia or Sunni traditions during his adult and political life.</p>\n<div class=\"book-citation\">📖 <strong>Book Note:</strong> Spectrum's Modern India</div>"
+      },
+      "end_date": {
+        "year": "1948"
+      },
+      "group": "Jannah",
+      "media": {
+        "url": "https://youtu.be/_RmMGNseS9U",
+        "caption": "BBC"
+      },
+      "background": {
+        "color": "#022c22"
+      }
+    },
+    {
+      "start_date": {
+        "year": "1889",
+        "month": "11",
+        "day": "14"
+      },
+      "end_date": {
+        "year": "1964",
+        "month": "5",
+        "day": "27"
+      },
+      "text": {
+        "headline": "Jawahar lal Nehru",
+        "text": "<p>Jawaharlal Nehru was an Indian lawyer, anti-colonial nationalist, secular humanist, social democrat, and statesman who was a central figure in India during the middle of the 20th century. Nehru was a principal leader of the Indian nationalist movement in the 1930s and 1940s.</p>"
+      },
+      "group": "Nehru",
+      "id": "evt_1_1889"
+    },
+    {
+      "start_date": {
+        "year": "1897",
+        "month": "1",
+        "day": "23"
+      },
+      "end_date": {
+        "year": "1945",
+        "month": "8",
+        "day": "18"
+      },
+      "text": {
+        "headline": "Subhash Chandra Bose",
+        "text": "<p>Subhas Chandra Bose was an Indian anti-colonial nationalist whose defiance of British authority in India made him a hero among many Indians, but his wartime alliances with Nazi Germany and the Empire of Japan left a legacy vexed by authoritarianism, antisemitism, and military failure.</p>"
+      },
+      "media": {
+        "url": "https://shwetankspad.com/wp-content/uploads/2015/01/bose.jpg?w=1440",
+        "credit": "Wiki"
+      },
+      "group": "Bose",
+      "id": "evt_2_1897"
+    },
+    {
+      "start_date": {
+        "year": "1919",
+        "month": "4",
+        "day": "13"
+      },
+      "text": {
+        "headline": "Jallianwala Bagh massacre",
+        "text": "<p>Jallianwala Bagh is a historic garden and memorial of national importance close to the Golden Temple complex in Amritsar, Punjab, India, preserved in the memory of those wounded and killed in the Jallianwala Bagh Massacre that took place on the site on the festival of Baisakhi Day.</p>"
+      },
+      "media": {
+        "url": "https://youtu.be/twxfswoZhFM?si=JiyZVSEch1diosCz",
+        "credit": "YouTube"
+      },
+      "id": "evt_3_1919"
     }
   ],
-  eras: [
+  "eras": [
     {
-      start_date: { year: "1707" },
-      end_date: { year: "1857" },
-      text: {
-        headline: "Decline of Mughals & Company Rule (1707–1857)",
-        text: "<p>Decline of the Mughal Empire, rise of regional kingdoms, expansion of the British East India Company, and the Great Revolt of 1857.</p>"
+      "start_date": {
+        "year": "1707"
+      },
+      "end_date": {
+        "year": "1857"
+      },
+      "text": {
+        "headline": "Decline of Mughals & Company Rule (1707–1857)",
+        "text": "<p>Decline of the Mughal Empire, rise of regional kingdoms, expansion of the British East India Company, and the Great Revolt of 1857.</p>"
       }
     },
     {
-      start_date: { year: "1858" },
-      end_date: { year: "1918" },
-      text: {
-        headline: "Direct Crown Rule & Early Nationalism (1858–1918)",
-        text: "<p>Queen Victoria's Proclamation of 1858, modern English education, Indian National Congress (1885), Partition of Bengal (1905), and Swadeshi Movement.</p>"
+      "start_date": {
+        "year": "1858"
+      },
+      "end_date": {
+        "year": "1918"
+      },
+      "text": {
+        "headline": "Direct Crown Rule & Early Nationalism (1858–1918)",
+        "text": "<p>Queen Victoria's Proclamation of 1858, modern English education, Indian National Congress (1885), Partition of Bengal (1905), and Swadeshi Movement.</p>"
       }
     },
     {
-      start_date: { year: "1919" },
-      end_date: { year: "1947" },
-      text: {
-        headline: "Gandhian Era & Road to Freedom (1919–1947)",
-        text: "<p>Mass mobilization, Rowlatt Satyagraha, Non-Cooperation Movement, Civil Disobedience Movement, Quit India, and Independence.</p>"
+      "start_date": {
+        "year": "1919"
+      },
+      "end_date": {
+        "year": "1947"
+      },
+      "text": {
+        "headline": "Gandhian Era & Road to Freedom (1919–1947)",
+        "text": "<p>Mass mobilization, Rowlatt Satyagraha, Non-Cooperation Movement, Civil Disobedience Movement, Quit India, and Independence.</p>"
       }
     }
   ]
