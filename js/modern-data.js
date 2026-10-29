@@ -91,7 +91,7 @@ const modernTimelineData = {
         "headline": "The Regulating Act of 1773",
         "text": "<p>The British Parliament passed its first major statute to regulate the administration of the East India Company. Warren Hastings was appointed the first Governor-General of Bengal, subordinating Madras and Bombay presidencies, and establishing the Supreme Court of Judicature at Calcutta (1774).</p>\n<div class=\"book-citation\"><strong>Spectrum Chapter 26:</strong> Constitutional Development under British Rule</div>"
       },
-      "group": "Administration",
+      "group": "Company Rule",
       "background": {
         "color": "#181f28"
       }
@@ -133,7 +133,7 @@ const modernTimelineData = {
       "end_date": {
         "year": "1948"
       },
-      "group": "Gandhi",
+      "group": "National Movement",
       "media": {
         "url": "https://youtu.be/codWemzsW40?si=6F3PDaZoeCZsHuv6"
       },
@@ -156,7 +156,7 @@ const modernTimelineData = {
       "end_date": {
         "year": "1948"
       },
-      "group": "Jannah",
+      "group": "National Movement",
       "media": {
         "url": "https://youtu.be/_RmMGNseS9U",
         "caption": "BBC"
@@ -181,7 +181,7 @@ const modernTimelineData = {
         "headline": "Jawahar lal Nehru",
         "text": "<p>Jawaharlal Nehru was an Indian lawyer, anti-colonial nationalist, secular humanist, social democrat, and statesman who was a central figure in India during the middle of the 20th century. Nehru was a principal leader of the Indian nationalist movement in the 1930s and 1940s.</p>"
       },
-      "group": "Nehru",
+      "group": "National Movement",
       "id": "evt_1_1889"
     },
     {
@@ -204,7 +204,7 @@ const modernTimelineData = {
         "url": "https://shwetankspad.com/wp-content/uploads/2015/01/bose.jpg?w=1440",
         "credit": "Wiki"
       },
-      "group": "Bose",
+      "group": "National Movement",
       "id": "evt_2_1897"
     },
     {
@@ -222,6 +222,7 @@ const modernTimelineData = {
         "url": "https://youtu.be/twxfswoZhFM?si=JiyZVSEch1diosCz",
         "credit": "YouTube"
       },
+      "group": "National Movement",
       "id": "evt_3_1919"
     }
   ],

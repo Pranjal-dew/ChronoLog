@@ -536,9 +536,9 @@ function renderTimeline(data, isLive = false) {
       initial_zoom: 2,
       scale_factor: 1.5,
       timenav_position: 'bottom',
-      timenav_height_percentage: 40,
+      timenav_height_percentage: 42,
       timenav_mobile_height_percentage: 45,
-      timenav_height_min: 180,
+      timenav_height_min: 210,
       slide_padding_lr: 24,
       optimal_tick_width: 90,
       duration: 500
@@ -563,12 +563,14 @@ function renderTimeline(data, isLive = false) {
 // 2. modernTimelineData (Master curated data from js/modern-data.js on disk & GitHub Pages)
 // 3. Google Sheets CSV (Cloud backup)
 async function loadTimelineData() {
-  // 1. Check localStorage for instant live updates
+  const masterEventCount = (typeof modernTimelineData !== 'undefined' && Array.isArray(modernTimelineData.events)) ? modernTimelineData.events.length : 0;
+
+  // 1. Check localStorage for instant live updates (prefer master data if localStorage has stale/fewer events)
   const localSaved = localStorage.getItem('chronolog_modern_events');
   if (localSaved) {
     try {
       const parsedEvents = JSON.parse(localSaved);
-      if (Array.isArray(parsedEvents) && parsedEvents.length > 0) {
+      if (Array.isArray(parsedEvents) && parsedEvents.length >= masterEventCount && parsedEvents.length > 0) {
         let activeEras = [];
         const localEras = localStorage.getItem('chronolog_modern_eras');
         if (localEras) {
