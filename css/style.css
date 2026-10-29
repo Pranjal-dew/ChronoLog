@@ -667,51 +667,65 @@ html, body {
    ========================================================================== */
 
 .tl-timeera {
-  height: 32px !important;
-  bottom: 40px !important; /* Sits cleanly ABOVE the 40px date ruler: 0% overlap with dates */
-  z-index: 6 !important;
+  height: 34px !important;
+  bottom: 40px !important; /* Elevated cleanly above the 40px date ruler */
+  z-index: 8 !important;
   pointer-events: auto !important;
   cursor: pointer !important;
+  box-sizing: border-box !important;
+}
+
+/* Base style for EVERY era: 100% solid, fully opaque dark archival slate */
+.tl-timeera .tl-timeera-background {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #1a1e27 !important; /* 100% SOLID OPAQUE — never transparent, never washed out */
+  border: 1px solid rgba(197, 160, 89, 0.45) !important;
+  border-top: 2px solid var(--accent-gold, #c5a059) !important;
+  border-radius: 4px !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+  opacity: 1 !important; /* Force 100% opacity */
   transition: all 0.25s ease !important;
 }
 
-/* Glass backdrop for era bands */
-.tl-timeera .tl-timeera-background {
-  border-top: 2px solid rgba(197, 160, 89, 0.5) !important;
-  border-right: 1px solid rgba(197, 160, 89, 0.2) !important;
-  border-left: 1px solid rgba(197, 160, 89, 0.2) !important;
-  border-bottom: 1px solid rgba(197, 160, 89, 0.2) !important;
-  border-radius: 4px !important;
-  box-sizing: border-box !important;
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-/* Phase 1: Company Rule (Bronze Gold) */
-.tl-timeera.tl-timeera-color0 .tl-timeera-background {
-  background: linear-gradient(180deg, rgba(197, 160, 89, 0.22) 0%, rgba(197, 160, 89, 0.08) 100%) !important;
-  border-top-color: #c5a059 !important;
-}
-
-/* Phase 2: Crown Rule (Regal Amber) */
+/* Phase 1: Company Rule (1707–1857) - Deep Warm Bronze (100% Solid) */
+.tl-timeera[data-era-index="0"] .tl-timeera-background,
+.tl-timeera.tl-timeera-color0 .tl-timeera-background,
 .tl-timeera.tl-timeera-color1 .tl-timeera-background {
-  background: linear-gradient(180deg, rgba(217, 131, 36, 0.22) 0%, rgba(217, 131, 36, 0.08) 100%) !important;
-  border-top-color: #d98324 !important;
+  background-color: #1e1d1a !important;
+  border-top-color: #c5a059 !important;
+  border-color: rgba(197, 160, 89, 0.5) !important;
 }
 
-/* Phase 3: Freedom Movement (Emerald Bronze) */
+/* Phase 2: Crown Rule (1858–1918) - Deep Regal Amber (100% Solid) */
+.tl-timeera[data-era-index="1"] .tl-timeera-background,
 .tl-timeera.tl-timeera-color2 .tl-timeera-background {
-  background: linear-gradient(180deg, rgba(74, 155, 122, 0.25) 0%, rgba(74, 155, 122, 0.08) 100%) !important;
-  border-top-color: #4a9b7a !important;
+  background-color: #211a14 !important;
+  border-top-color: #d98324 !important;
+  border-color: rgba(217, 131, 36, 0.5) !important;
 }
 
-/* Hover and Active highlights on era bands */
-.tl-timeera.tl-timeera-active .tl-timeera-background,
-.tl-timeera:hover .tl-timeera-background {
-  background: linear-gradient(180deg, rgba(197, 160, 89, 0.38) 0%, rgba(197, 160, 89, 0.15) 100%) !important;
-  border-top: 2px solid #f0cc70 !important;
-  box-shadow: 0 0 12px rgba(197, 160, 89, 0.35) !important;
+/* Phase 3: Freedom Movement (1919–1947) - Deep Emerald Bronze (100% Solid) */
+.tl-timeera[data-era-index="2"] .tl-timeera-background,
+.tl-timeera.tl-timeera-color3 .tl-timeera-background,
+.tl-timeera.tl-timeera-color4 .tl-timeera-background,
+.tl-timeera.tl-timeera-color5 .tl-timeera-background {
+  background-color: #131d18 !important;
+  border-top-color: #4a9b7a !important;
+  border-color: rgba(74, 155, 122, 0.5) !important;
+}
+
+/* Hover & Active highlight states (luminous solid gold boost) */
+.tl-timeera:hover .tl-timeera-background,
+.tl-timeera.tl-timeera-active .tl-timeera-background {
+  background-color: #29241c !important;
+  border-top: 2px solid #f5cf78 !important;
+  border-color: rgba(245, 207, 120, 0.8) !important;
+  box-shadow: 0 0 14px rgba(197, 160, 89, 0.45) !important;
 }
 
 /* Content Container & Text Alignment */
@@ -725,6 +739,8 @@ html, body {
   align-items: center !important;
   overflow: visible !important;
   box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .tl-timeera .tl-timeera-content {
@@ -754,8 +770,8 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
   font-family: var(--font-serif, 'Cinzel', serif) !important;
-  color: #f7f4ea !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+  color: #ffffff !important; /* Pure crisp white for maximum contrast */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 1) !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
@@ -768,40 +784,42 @@ html, body {
 
 /* Structured Title & Date Spans inside Era */
 .tl-era-phase-title {
-  font-size: 0.74rem !important;
+  font-size: 0.76rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
-  color: #f5eedc !important;
+  color: #ffffff !important;
   display: inline-block !important;
   line-height: 1 !important;
+  text-shadow: 0 1px 2px #000 !important;
 }
 
 .tl-era-phase-dates {
   font-family: var(--font-sans, 'Inter', sans-serif) !important;
-  font-size: 0.65rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.03em !important;
-  color: var(--accent-gold, #c5a059) !important;
-  opacity: 0.95 !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  color: #f0cc70 !important;
   display: inline-block !important;
   line-height: 1 !important;
-  background: rgba(0, 0, 0, 0.45) !important;
-  padding: 2px 6px !important;
-  border-radius: 3px !important;
-  border: 1px solid rgba(197, 160, 89, 0.25) !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  padding: 2px 7px !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(197, 160, 89, 0.5) !important;
+  text-shadow: 0 1px 2px #000 !important;
 }
 
 .tl-timeera:hover .tl-era-phase-title,
 .tl-timeera.tl-timeera-active .tl-era-phase-title {
   color: #ffffff !important;
-  text-shadow: 0 0 8px rgba(197, 160, 89, 0.6) !important;
+  text-shadow: 0 0 8px rgba(197, 160, 89, 0.8) !important;
 }
 
 .tl-timeera:hover .tl-era-phase-dates,
 .tl-timeera.tl-timeera-active .tl-era-phase-dates {
-  color: #f0cc70 !important;
-  border-color: rgba(197, 160, 89, 0.6) !important;
+  color: #ffffff !important;
+  background: rgba(197, 160, 89, 0.4) !important;
+  border-color: #f0cc70 !important;
 }
 
 /* ==========================================================================

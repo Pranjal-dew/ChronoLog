@@ -278,6 +278,7 @@ function updateActiveEraPill(activeEraIndex) {
 function bindAxisEraInteractivity() {
   const axisEras = document.querySelectorAll('.tl-timeera');
   axisEras.forEach((el, idx) => {
+    el.setAttribute('data-era-index', idx);
     if (el.dataset.boundClick) return;
     el.dataset.boundClick = 'true';
     if (eraSlideMap[idx]) {
