@@ -675,7 +675,7 @@ html, body {
 /* Glassmorphic Capsule — Compact & Semi-transparent in Rest State */
 .tl-slidenav-previous .tl-slidenav-content-container,
 .tl-slidenav-next .tl-slidenav-content-container {
-  display: flex !important;
+  display: grid !important;
   align-items: center !important;
   width: auto !important;
   min-width: 0 !important;
@@ -691,6 +691,7 @@ html, body {
   overflow: hidden !important;
   transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
               padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              column-gap 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               background 0.25s ease,
               border-color 0.25s ease,
               opacity 0.25s ease,
@@ -698,18 +699,31 @@ html, body {
               transform 0.25s ease !important;
 }
 
-/* Symmetrical Alignment */
+/* Symmetrical Stacked Grid Layout (Title Line 1, Year Line 2) */
 .tl-slidenav-previous .tl-slidenav-content-container {
-  flex-direction: row !important;
+  grid-template-areas:
+    "icon title"
+    "icon date";
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 0px;
+  row-gap: 1px;
+  text-align: left;
 }
 
 .tl-slidenav-next .tl-slidenav-content-container {
-  flex-direction: row !important;
+  grid-template-areas:
+    "title icon"
+    "date  icon";
+  grid-template-columns: minmax(0, 1fr) 34px;
+  column-gap: 0px;
+  row-gap: 1px;
+  text-align: right;
 }
 
 /* Arrow Icon Button */
 .tl-slidenav-previous .tl-slidenav-icon,
 .tl-slidenav-next .tl-slidenav-icon {
+  grid-area: icon;
   margin: 0 !important;
   padding: 0 !important;
   width: 34px !important;
@@ -726,7 +740,6 @@ html, body {
   font-size: 18px !important;
   line-height: 1 !important;
   text-shadow: none !important;
-  flex-shrink: 0 !important;
   transition: all 0.25s ease !important;
 }
 
@@ -735,17 +748,10 @@ html, body {
   display: block !important;
 }
 
-.tl-slidenav-previous .tl-slidenav-icon {
-  order: 1 !important;
-}
-
-.tl-slidenav-next .tl-slidenav-icon {
-  order: 3 !important;
-}
-
-/* Text Previews (Collapsed & Hidden in Rest State) */
+/* Text Previews (Collapsed & Hidden in Rest State, Stacked on Hover) */
 .tl-slidenav-previous .tl-slidenav-title,
 .tl-slidenav-next .tl-slidenav-title {
+  grid-area: title;
   margin: 0 !important;
   padding: 0 !important;
   width: auto !important;
@@ -753,27 +759,20 @@ html, body {
   opacity: 0 !important;
   overflow: hidden !important;
   white-space: nowrap !important;
+  text-overflow: ellipsis !important;
   font-family: var(--font-serif) !important;
   font-size: 12px !important;
   font-weight: 600 !important;
-  line-height: 1.2 !important;
+  line-height: 1.25 !important;
   color: #f0ede6 !important;
   text-shadow: none !important;
   transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.25s ease,
-              margin 0.3s ease !important;
-}
-
-.tl-slidenav-previous .tl-slidenav-title {
-  order: 2 !important;
-}
-
-.tl-slidenav-next .tl-slidenav-title {
-  order: 1 !important;
+              opacity 0.25s ease !important;
 }
 
 .tl-slidenav-previous .tl-slidenav-description,
 .tl-slidenav-next .tl-slidenav-description {
+  grid-area: date;
   margin: 0 !important;
   padding: 0 !important;
   width: auto !important;
@@ -781,29 +780,21 @@ html, body {
   opacity: 0 !important;
   overflow: hidden !important;
   white-space: nowrap !important;
+  text-overflow: ellipsis !important;
   font-family: monospace !important;
   font-size: 10px !important;
-  line-height: 1.2 !important;
+  line-height: 1.25 !important;
   color: var(--accent-gold) !important;
   text-shadow: none !important;
   transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.25s ease,
-              margin 0.3s ease !important;
+              opacity 0.25s ease !important;
 }
 
-.tl-slidenav-previous .tl-slidenav-description {
-  order: 3 !important;
-}
-
-.tl-slidenav-next .tl-slidenav-description {
-  order: 2 !important;
-}
-
-/* Hover State: Reveal Full Detailed Card Capsule */
-.tl-slidenav-previous:hover .tl-slidenav-content-container,
-.tl-slidenav-next:hover .tl-slidenav-content-container {
-  max-width: 320px !important;
-  padding: 5px 14px 5px 6px !important;
+/* Hover State: Reveal Full Detailed Card Capsule with Stacked Text */
+.tl-slidenav-previous:hover .tl-slidenav-content-container {
+  max-width: 260px !important;
+  column-gap: 10px !important;
+  padding: 6px 14px 6px 6px !important;
   background: rgba(18, 22, 31, 0.95) !important;
   border-color: var(--accent-gold) !important;
   opacity: 1 !important;
@@ -812,7 +803,14 @@ html, body {
 }
 
 .tl-slidenav-next:hover .tl-slidenav-content-container {
-  padding: 5px 6px 5px 14px !important;
+  max-width: 260px !important;
+  column-gap: 10px !important;
+  padding: 6px 6px 6px 14px !important;
+  background: rgba(18, 22, 31, 0.95) !important;
+  border-color: var(--accent-gold) !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 22px var(--accent-gold-glow), 0 8px 30px rgba(0, 0, 0, 0.75) !important;
+  transform: translateY(-2px);
 }
 
 .tl-slidenav-previous:hover .tl-slidenav-icon,
@@ -823,28 +821,16 @@ html, body {
   box-shadow: 0 0 10px var(--accent-gold-glow) !important;
 }
 
-.tl-slidenav-previous:hover .tl-slidenav-title {
-  max-width: 170px !important;
-  opacity: 1 !important;
-  margin-left: 10px !important;
-}
-
+.tl-slidenav-previous:hover .tl-slidenav-title,
 .tl-slidenav-next:hover .tl-slidenav-title {
-  max-width: 170px !important;
+  max-width: 175px !important;
   opacity: 1 !important;
-  margin-right: 8px !important;
 }
 
-.tl-slidenav-previous:hover .tl-slidenav-description {
-  max-width: 80px !important;
-  opacity: 0.9 !important;
-  margin-left: 8px !important;
-}
-
+.tl-slidenav-previous:hover .tl-slidenav-description,
 .tl-slidenav-next:hover .tl-slidenav-description {
-  max-width: 80px !important;
-  opacity: 0.9 !important;
-  margin-right: 10px !important;
+  max-width: 175px !important;
+  opacity: 0.85 !important;
 }
 
 /* Active Press State */
