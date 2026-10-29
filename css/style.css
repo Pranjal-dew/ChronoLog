@@ -598,6 +598,45 @@ html, body {
   text-transform: uppercase !important;
 }
 
+/* Era Bands Text — Crystal Clear High Contrast on Native Colored Bands */
+.tl-timeera .tl-timeera-content-container {
+  width: auto !important;
+  min-width: 120px !important;
+  max-width: 100% !important;
+  border: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.tl-timeera .tl-timeera-content {
+  overflow: visible !important;
+  padding: 3px 6px !important;
+}
+
+.tl-timeera .tl-timeera-text {
+  overflow: visible !important;
+}
+
+.tl-timeera .tl-headline {
+  color: #ffffff !important; /* Crisp pure white for maximum legibility on colored bands */
+  font-family: var(--font-serif, 'Cinzel', serif) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95), 0 0 2px #000 !important;
+  white-space: nowrap !important;
+  margin-left: 6px !important;
+  position: static !important;
+  display: inline-block !important;
+  line-height: 1.4 !important;
+}
+
+/* Remove KnightLab fadeout gradient mask that washed out the era text */
+.tl-timeera .tl-timeera-content-container .tl-timeera-content .tl-timeera-text h2.tl-headline.tl-headline-fadeout:after {
+  display: none !important;
+}
+
 /* ==========================================================================
    Navigation Arrows (Prev / Next Buttons on Slides) — Expanding Glass Capsule
    ========================================================================== */
