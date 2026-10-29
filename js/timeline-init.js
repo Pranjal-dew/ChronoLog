@@ -192,22 +192,252 @@ function initFullscreenToggle() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch(err => console.warn(err));
       btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></svg>';
-      btn.title = 'Exit Fullscreen';
+      btn.title = 'Exit Fullscreen (F)';
     } else {
       document.exitFullscreen().catch(err => console.warn(err));
       btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>';
-      btn.title = 'Enter Fullscreen';
+      btn.title = 'Enter Fullscreen (F)';
     }
   });
 }
 
+let currentTimelineData = null;
+let eraSlideMap = [];
+
+function setupEraNavigation(eras, events) {
+  const container = document.getElementById('era-pills-container');
+  if (!container) return;
+  container.innerHTML = '';
+  eraSlideMap = [];
+
+  if (!eras || eras.length === 0) return;
+
+  eras.forEach((era, idx) => {
+    const sYear = parseInt(era.start_date?.year, 10) || 0;
+    const eYear = parseInt(era.end_date?.year, 10) || 9999;
+
+    // Find the first milestone whose start year falls within [sYear, eYear]
+    let firstEventIdx = -1;
+    if (events && events.length > 0) {
+      firstEventIdx = events.findIndex(ev => {
+        const evYear = parseInt(ev.start_date?.year, 10);
+        return !isNaN(evYear) && evYear >= sYear && evYear <= eYear;
+      });
+    }
+
+    const targetSlide = firstEventIdx !== -1 ? firstEventIdx + 1 : 1;
+
+    eraSlideMap.push({
+      eraIndex: idx,
+      headline: era.text?.headline || `Era ${idx + 1}`,
+      startYear: sYear,
+      endYear: eYear,
+      targetSlide: targetSlide
+    });
+
+    const pill = document.createElement('button');
+    pill.className = 'era-pill';
+    pill.setAttribute('data-era-index', idx);
+    pill.setAttribute('type', 'button');
+    pill.setAttribute('title', `Jump to Era ${idx + 1}: ${era.text?.headline || ''}`);
+    pill.innerHTML = `<span class="era-pill-num">${idx + 1}</span><span class="era-pill-title">${era.text?.headline || `Era ${idx + 1}`}</span>`;
+
+    pill.addEventListener('click', () => {
+      if (window.timeline) {
+        window.timeline.goTo(targetSlide);
+        updateActiveEraPill(idx);
+        syncActiveSlideContext();
+      }
+    });
+
+    container.appendChild(pill);
+  });
+}
+
+function updateActiveEraPill(activeEraIndex) {
+  const container = document.getElementById('era-pills-container');
+  if (!container) return;
+  const pills = container.querySelectorAll('.era-pill');
+  pills.forEach((p, i) => {
+    if (i === activeEraIndex) {
+      p.classList.add('active');
+    } else {
+      p.classList.remove('active');
+    }
+  });
+}
+
+function syncActiveSlideContext() {
+  if (!window.timeline || !currentTimelineData) return;
+
+  setTimeout(() => {
+    const activeSlide = document.querySelector('.tl-slide.tl-slide-active');
+    if (!activeSlide) return;
+
+    // Check if title slide
+    if (activeSlide.classList.contains('tl-slide-titleslide')) {
+      updateActiveEraPill(-1);
+      return;
+    }
+
+    const events = currentTimelineData.events || [];
+    const currentId = window.timeline.current_id;
+    let currentEvent = events.find(e => e.id === currentId);
+
+    // Fallback if current_id not matching: inspect slide headline
+    if (!currentEvent) {
+      const headlineText = activeSlide.querySelector('.tl-headline')?.textContent?.trim();
+      if (headlineText) {
+        currentEvent = events.find(e => e.text?.headline?.trim() === headlineText);
+      }
+    }
+    if (!currentEvent) currentEvent = events[0];
+
+    if (currentEvent) {
+      const evYear = parseInt(currentEvent.start_date?.year, 10);
+      let matchingEraIdx = eraSlideMap.findIndex(m => evYear >= m.startYear && evYear <= m.endYear);
+      if (matchingEraIdx !== -1) {
+        updateActiveEraPill(matchingEraIdx);
+      }
+
+      // Inject context badges if not already present in the active slide
+      const headlineEl = activeSlide.querySelector('.tl-headline');
+      if (headlineEl && !activeSlide.querySelector('.slide-context-bar')) {
+        const badgeBar = document.createElement('div');
+        badgeBar.className = 'slide-context-bar';
+
+        if (matchingEraIdx !== -1 && currentTimelineData.eras && currentTimelineData.eras[matchingEraIdx]) {
+          const eraHeadline = currentTimelineData.eras[matchingEraIdx].text?.headline || 'Modern Era';
+          const eraShort = eraHeadline.split('(')[0].trim();
+          badgeBar.innerHTML += `<span class="slide-badge slide-badge-era">${eraShort}</span>`;
+        }
+
+        if (currentEvent.group) {
+          badgeBar.innerHTML += `<span class="slide-badge slide-badge-group">${currentEvent.group}</span>`;
+        }
+
+        const dateStr = currentEvent.display_date || currentEvent.start_date?.year || '';
+        if (dateStr) {
+          badgeBar.innerHTML += `<span class="slide-badge slide-badge-date">${dateStr}</span>`;
+        }
+
+        headlineEl.parentNode.insertBefore(badgeBar, headlineEl);
+      }
+    }
+  }, 120);
+}
+
+function initKeyboardHotkeys() {
+  document.addEventListener('keydown', function (e) {
+    // Avoid hijacking when typing into form elements
+    const activeEl = document.activeElement;
+    if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'SELECT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable)) {
+      return;
+    }
+
+    if (!window.timeline) return;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown') {
+      e.preventDefault();
+      window.timeline.goToNext();
+      syncActiveSlideContext();
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault();
+      window.timeline.goToPrev();
+      syncActiveSlideContext();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      window.timeline.goTo(0);
+      syncActiveSlideContext();
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      const total = currentTimelineData && currentTimelineData.events ? currentTimelineData.events.length : 1;
+      window.timeline.goTo(total);
+      syncActiveSlideContext();
+    } else if (e.key === '1') {
+      if (eraSlideMap[0]) {
+        window.timeline.goTo(eraSlideMap[0].targetSlide);
+        updateActiveEraPill(0);
+        syncActiveSlideContext();
+      }
+    } else if (e.key === '2') {
+      if (eraSlideMap[1]) {
+        window.timeline.goTo(eraSlideMap[1].targetSlide);
+        updateActiveEraPill(1);
+        syncActiveSlideContext();
+      }
+    } else if (e.key === '3') {
+      if (eraSlideMap[2]) {
+        window.timeline.goTo(eraSlideMap[2].targetSlide);
+        updateActiveEraPill(2);
+        syncActiveSlideContext();
+      }
+    } else if (e.key === 'f' || e.key === 'F') {
+      const btnFullscreen = document.getElementById('btn-fullscreen');
+      if (btnFullscreen) btnFullscreen.click();
+    }
+  });
+}
+
+function initStudyLightbox() {
+  const dialog = document.getElementById('study-lightbox');
+  const closeBtn = document.getElementById('lightbox-close');
+  const imgEl = document.getElementById('lightbox-img');
+  const headlineEl = document.getElementById('lightbox-headline');
+  const captionEl = document.getElementById('lightbox-caption');
+  const creditEl = document.getElementById('lightbox-credit');
+
+  if (!dialog || !closeBtn || !imgEl) return;
+
+  closeBtn.addEventListener('click', () => {
+    dialog.close();
+    imgEl.classList.remove('zoomed');
+  });
+
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) {
+      dialog.close();
+      imgEl.classList.remove('zoomed');
+    }
+  });
+
+  imgEl.addEventListener('click', () => {
+    imgEl.classList.toggle('zoomed');
+  });
+
+  const embed = document.getElementById('timeline-embed');
+  if (embed) {
+    embed.addEventListener('click', (e) => {
+      const clickedImg = e.target.closest('.tl-media-image img, .tl-media-item img');
+      if (!clickedImg) return;
+
+      const mediaContainer = clickedImg.closest('.tl-media');
+      const slide = clickedImg.closest('.tl-slide');
+
+      const headline = slide ? (slide.querySelector('.tl-headline')?.textContent || '') : '';
+      const caption = mediaContainer ? (mediaContainer.querySelector('.tl-caption')?.textContent || '') : '';
+      const credit = mediaContainer ? (mediaContainer.querySelector('.tl-credit')?.textContent || '') : '';
+
+      imgEl.src = clickedImg.src;
+      headlineEl.textContent = headline;
+      captionEl.textContent = caption;
+      creditEl.textContent = credit ? `Source: ${credit}` : '';
+
+      imgEl.classList.remove('zoomed');
+      dialog.showModal();
+    });
+  }
+}
+
 function renderTimeline(data, isLive = false) {
+  currentTimelineData = data;
   const eventCountEl = document.getElementById('event-count');
   if (eventCountEl && data.events) {
     eventCountEl.textContent = `${data.events.length} Historical Milestones`;
   }
 
   populateCategoryFilter(data.events);
+  setupEraNavigation(data.eras, data.events);
 
   if (typeof TL !== 'undefined') {
     const timelineOptions = {
@@ -223,6 +453,14 @@ function renderTimeline(data, isLive = false) {
     };
 
     window.timeline = new TL.Timeline('timeline-embed', data, timelineOptions);
+
+    window.timeline.on('ready', function () {
+      syncActiveSlideContext();
+    });
+
+    window.timeline.on('change', function () {
+      syncActiveSlideContext();
+    });
   }
 }
 
@@ -292,6 +530,8 @@ async function loadTimelineData() {
 
 document.addEventListener('DOMContentLoaded', function () {
   initFullscreenToggle();
+  initKeyboardHotkeys();
+  initStudyLightbox();
   loadTimelineData();
 
   // Instant Cross-Tab Live Sync from ChronoLog Studio

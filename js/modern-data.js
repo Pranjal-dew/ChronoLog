@@ -16,6 +16,104 @@ const modernTimelineData = {
   },
   "events": [
     {
+      "id": "evt_1707_aurangzeb",
+      "start_date": {
+        "year": "1707",
+        "month": "3",
+        "day": "3"
+      },
+      "text": {
+        "headline": "Death of Aurangzeb & Decline of Mughals",
+        "text": "<p>The death of Mughal Emperor Aurangzeb at Ahmednagar marked the end of the centralized imperial era. Succession wars and the rise of autonomous regional kingdoms (Marathas, Nawabs of Bengal, Awadh, and Nizam of Hyderabad) created a political vacuum swiftly exploited by European mercantilist powers.</p>\n<div class=\"book-citation\"><strong>Spectrum Chapter 3:</strong> Expansion & Consolidation of British Power in India</div>"
+      },
+      "group": "Company Rule",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Aurangzeb_in_later_years.jpg/800px-Aurangzeb_in_later_years.jpg",
+        "credit": "Wikimedia Commons",
+        "caption": "Emperor Aurangzeb reading in his later years"
+      },
+      "background": {
+        "color": "#1f1d1a"
+      }
+    },
+    {
+      "id": "evt_1757_plassey",
+      "start_date": {
+        "year": "1757",
+        "month": "6",
+        "day": "23"
+      },
+      "text": {
+        "headline": "Battle of Plassey",
+        "text": "<p>British forces under Robert Clive defeated Siraj-ud-Daulah, the Nawab of Bengal, following the betrayal of commander Mir Jafar. This decisive battle laid the territorial foundation of the British East India Company's rule in India, transforming it from a trading company into a dominant sovereign authority.</p>\n<div class=\"book-citation\"><strong>Spectrum Chapter 4:</strong> Rise of the British Power in Bengal</div>"
+      },
+      "group": "Company Rule",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Lord_Clive_meeting_with_Mir_Jafar_after_the_Battle_of_Plassey.jpg/1280px-Lord_Clive_meeting_with_Mir_Jafar_after_the_Battle_of_Plassey.jpg",
+        "credit": "Francis Hayman / National Portrait Gallery",
+        "caption": "Robert Clive meeting Mir Jafar after Plassey (1757)"
+      },
+      "background": {
+        "color": "#231f17"
+      }
+    },
+    {
+      "id": "evt_1764_buxar",
+      "start_date": {
+        "year": "1764",
+        "month": "10",
+        "day": "22"
+      },
+      "text": {
+        "headline": "Battle of Buxar & Diwani Rights",
+        "text": "<p>The combined forces of Mir Qasim (Nawab of Bengal), Shuja-ud-Daula (Nawab of Awadh), and Mughal Emperor Shah Alam II were decisively defeated by Hector Munro at Buxar. Through the subsequent Treaty of Allahabad (1765), Clive acquired the <em>Diwani</em> (fiscal administration and revenue collection rights) over Bengal, Bihar, and Orissa.</p>\n<div class=\"book-citation\"><strong>Spectrum Chapter 4:</strong> Dual Government in Bengal (1765–1772)</div>"
+      },
+      "group": "Company Rule",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive%2C_August_1765.jpg/1280px-Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive%2C_August_1765.jpg",
+        "credit": "Benjamin West / British Library",
+        "caption": "Shah Alam II granting the Diwani of Bengal to Lord Clive (August 1765)"
+      },
+      "background": {
+        "color": "#1c221a"
+      }
+    },
+    {
+      "id": "evt_1773_regulating_act",
+      "start_date": {
+        "year": "1773"
+      },
+      "text": {
+        "headline": "The Regulating Act of 1773",
+        "text": "<p>The British Parliament passed its first major statute to regulate the administration of the East India Company. Warren Hastings was appointed the first Governor-General of Bengal, subordinating Madras and Bombay presidencies, and establishing the Supreme Court of Judicature at Calcutta (1774).</p>\n<div class=\"book-citation\"><strong>Spectrum Chapter 26:</strong> Constitutional Development under British Rule</div>"
+      },
+      "group": "Administration",
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "evt_1857_revolt",
+      "start_date": {
+        "year": "1857",
+        "month": "5",
+        "day": "10"
+      },
+      "text": {
+        "headline": "The Revolt of 1857 (First War of Independence)",
+        "text": "<p>Triggered by sepoy resentment at Meerut over greased cartridges and underlying colonial grievances, the rebellion spread across Northern and Central India under the nominal leadership of Mughal Emperor Bahadur Shah Zafar. The revolt ended the reign of the East India Company and led directly to Queen Victoria's Proclamation of 1858 transferring power to the British Crown.</p>\n<div class=\"book-citation\"><strong>Spectrum Chapter 7:</strong> The Revolt of 1857</div>"
+      },
+      "group": "Revolt & Resistance",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Capture_of_Bahadur_Shah_Zafar.jpg/1280px-Capture_of_Bahadur_Shah_Zafar.jpg",
+        "credit": "Wikimedia Commons",
+        "caption": "Capture of Bahadur Shah Zafar by Major Hodson in Delhi (1857)"
+      },
+      "background": {
+        "color": "#2c1717"
+      }
+    },
+    {
       "id": "evt_0_1869",
       "start_date": {
         "year": "1869",
@@ -24,7 +122,7 @@ const modernTimelineData = {
       },
       "text": {
         "headline": "Mahatma Gandhi",
-        "text": "<p>Mohandas Karamchand Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule, and whose legacy would later inspire movements for civil rights and freedom across the world.</p>\n<div class=\"book-citation\">📖 <strong>Book Note:</strong> Spectrum's Modern India</div>"
+        "text": "<p>Mohandas Karamchand Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule, and whose legacy would later inspire movements for civil rights and freedom across the world.</p>\n<div class=\"book-citation\"><strong>Book Note:</strong> Spectrum's Modern India</div>"
       },
       "end_date": {
         "year": "1948"
@@ -46,7 +144,7 @@ const modernTimelineData = {
       },
       "text": {
         "headline": "Muhammad Ali Jinnah",
-        "text": "<p>Muhammad Ali Jinnah was born into a Muslim family rather than being a convert himself, though his ancestral roots trace back to a Hindu background. His paternal grandfather, Premjibhai Meghji Thakkar, belonged to a prosperous Hindu Lohana family from Paneli Moti village in Gujarat. After entering the fish and non-vegetarian trade, Premjibhai was socially excommunicated by his orthodox community, which ultimately led him to convert to the Ismaili Khoja branch of Islam. His son, Jinnahbhai Poonja (Jinnah's father), was raised as a Muslim and migrated to Karachi, where Jinnah was born in 1876. While Jinnah grew up within the Ismaili Khoja tradition, he later adopted mainstream Twelver Shia or Sunni traditions during his adult and political life.</p>\n<div class=\"book-citation\">📖 <strong>Book Note:</strong> Spectrum's Modern India</div>"
+        "text": "<p>Muhammad Ali Jinnah was born into a Muslim family rather than being a convert himself, though his ancestral roots trace back to a Hindu background. His paternal grandfather, Premjibhai Meghji Thakkar, belonged to a prosperous Hindu Lohana family from Paneli Moti village in Gujarat. After entering the fish and non-vegetarian trade, Premjibhai was socially excommunicated by his orthodox community, which ultimately led him to convert to the Ismaili Khoja branch of Islam. His son, Jinnahbhai Poonja (Jinnah's father), was raised as a Muslim and migrated to Karachi, where Jinnah was born in 1876. While Jinnah grew up within the Ismaili Khoja tradition, he later adopted mainstream Twelver Shia or Sunni traditions during his adult and political life.</p>\n<div class=\"book-citation\"><strong>Book Note:</strong> Spectrum's Modern India</div>"
       },
       "end_date": {
         "year": "1948"

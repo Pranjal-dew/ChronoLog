@@ -16,7 +16,7 @@
   <!-- Custom Theme Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="timeline-page">
 
   <!-- Top Navigation Header -->
   <header class="site-header">
@@ -42,17 +42,53 @@
 
       <span id="event-count" class="event-count-pill">Loading...</span>
 
+      <!-- Studio Editor Direct Link -->
+      <a href="editor.html" class="btn-studio" title="Open ChronoLog Studio Editor">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span>Studio</span>
+      </a>
+
       <!-- Fullscreen Mode Toggle -->
-      <button id="btn-fullscreen" class="btn-fullscreen" title="Toggle Fullscreen Reading Mode">
+      <button id="btn-fullscreen" class="btn-fullscreen" title="Toggle Fullscreen Reading Mode (Press F)">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
       </button>
     </div>
   </header>
 
+  <!-- Era Quick Jump Navigation Bar -->
+  <nav class="era-subnav" id="era-subnav" aria-label="Era Quick Jump Navigation">
+    <div class="era-subnav-inner" id="era-pills-container">
+      <!-- Dynamic Era Jump Buttons will be injected here -->
+    </div>
+    <div class="keyboard-hints" title="Keyboard Shortcuts for Readers">
+      <span class="kbd-hint"><kbd>←</kbd><kbd>→</kbd> Slide</span>
+      <span class="kbd-hint"><kbd>1-3</kbd> Era</span>
+      <span class="kbd-hint"><kbd>Home</kbd><kbd>End</kbd></span>
+      <span class="kbd-hint"><kbd>F</kbd> Fullscreen</span>
+    </div>
+  </nav>
+
   <!-- TimelineJS Mount Area -->
   <main class="timeline-wrapper">
     <div id="timeline-embed"></div>
   </main>
+
+  <!-- Archival Study Lightbox Modal -->
+  <dialog id="study-lightbox" class="study-lightbox" aria-modal="true">
+    <div class="lightbox-dialog-card">
+      <button id="lightbox-close" class="lightbox-close-btn" title="Close Lightbox (Esc)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="lightbox-media-container">
+        <img id="lightbox-img" src="" alt="Historical Artifact Inspection">
+      </div>
+      <div class="lightbox-info-bar">
+        <h4 id="lightbox-headline" class="lightbox-headline"></h4>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+        <span id="lightbox-credit" class="lightbox-credit"></span>
+      </div>
+    </div>
+  </dialog>
 
   <!-- TimelineJS CDN Script -->
   <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
