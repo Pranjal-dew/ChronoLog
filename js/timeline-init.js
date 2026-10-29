@@ -237,6 +237,18 @@ async function loadTimelineData() {
     try {
       const parsedEvents = JSON.parse(localSaved);
       if (Array.isArray(parsedEvents) && parsedEvents.length > 0) {
+        let activeEras = [];
+        const localEras = localStorage.getItem('chronolog_modern_eras');
+        if (localEras) {
+          try {
+            const parsedEras = JSON.parse(localEras);
+            if (Array.isArray(parsedEras) && parsedEras.length > 0) activeEras = parsedEras;
+          } catch (e) {}
+        }
+        if (activeEras.length === 0 && typeof modernTimelineData !== 'undefined' && modernTimelineData.eras) {
+          activeEras = modernTimelineData.eras;
+        }
+
         const fullData = {
           title: (typeof modernTimelineData !== 'undefined' && modernTimelineData.title) ? modernTimelineData.title : {
             text: {
@@ -245,7 +257,7 @@ async function loadTimelineData() {
             }
           },
           events: parsedEvents,
-          eras: (typeof modernTimelineData !== 'undefined' && modernTimelineData.eras) ? modernTimelineData.eras : []
+          eras: activeEras
         };
         renderTimeline(fullData, true);
         return;
@@ -284,8 +296,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Instant Cross-Tab Live Sync from ChronoLog Studio
   window.addEventListener('storage', function (e) {
-    if (e.key === 'chronolog_modern_events') {
-      console.log('ChronoLog Studio updated events in another tab. Reloading timeline...');
+    if (e.key === 'chronolog_modern_events' || e.key === 'chronolog_modern_eras') {
+      console.log('ChronoLog Studio updated data in another tab. Reloading timeline...');
       location.reload();
     }
   });
@@ -294,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
       const syncChannel = new BroadcastChannel('chronolog_sync');
       syncChannel.onmessage = function (event) {
-        if (event.data && event.data.type === 'UPDATE') {
+        if (event.data && (event.data.type === 'UPDATE' || event.data.type === 'UPDATE_ERAS')) {
           console.log('Received live broadcast update from ChronoLog Studio. Refreshing...');
           location.reload();
         }
