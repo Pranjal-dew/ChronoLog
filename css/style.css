@@ -646,77 +646,191 @@ html, body {
 }
 
 /* ==========================================================================
-   Navigation Arrows (Prev / Next Buttons on Slides) — Restored Original Architecture
+   Navigation Arrows (Prev / Next Buttons on Slides) — Precision Archival Capsule
    ========================================================================== */
 
-/* Restore TimelineJS's original interactive side paddles with title & date previews */
 .tl-slidenav-previous,
 .tl-slidenav-next {
-  top: 45% !important;
+  top: 48% !important;
   transform: translateY(-50%) !important;
   z-index: 25 !important;
   cursor: pointer !important;
-  border-radius: 8px !important;
-  transition: background 0.25s ease, opacity 0.25s ease !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
 }
 
-.tl-slidenav-previous:hover {
-  background: linear-gradient(to right, rgba(13, 15, 20, 0.88) 0%, rgba(13, 15, 20, 0.45) 75%, transparent 100%) !important;
+.tl-slidenav-previous {
+  left: 20px !important;
+  right: auto !important;
 }
 
-.tl-slidenav-next:hover {
-  background: linear-gradient(to left, rgba(13, 15, 20, 0.88) 0%, rgba(13, 15, 20, 0.45) 75%, transparent 100%) !important;
+.tl-slidenav-next {
+  right: 20px !important;
+  left: auto !important;
 }
 
-/* Navigation Arrow Icons */
-.tl-slidenav-next .tl-slidenav-icon,
-.tl-slidenav-previous .tl-slidenav-icon {
+/* Glassmorphic Navigation Card Capsule */
+.tl-slidenav-previous .tl-slidenav-content-container,
+.tl-slidenav-next .tl-slidenav-content-container {
+  display: grid !important;
+  align-items: center !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 260px !important;
+  padding: 8px 14px !important;
+  background: rgba(18, 22, 31, 0.88) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(197, 160, 89, 0.3) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55), 0 0 1px rgba(197, 160, 89, 0.25) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Symmetrical Grid Alignments */
+.tl-slidenav-previous .tl-slidenav-content-container {
+  grid-template-areas:
+    "icon title"
+    "icon date";
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 10px;
+  row-gap: 1px;
+  text-align: left;
+}
+
+.tl-slidenav-next .tl-slidenav-content-container {
+  grid-template-areas:
+    "title icon"
+    "date  icon";
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 10px;
+  row-gap: 1px;
+  text-align: right;
+}
+
+/* Map Grid Areas */
+.tl-slidenav-previous .tl-slidenav-icon,
+.tl-slidenav-next .tl-slidenav-icon {
+  grid-area: icon;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  border-radius: 50% !important;
+  background: rgba(197, 160, 89, 0.12) !important;
+  border: 1px solid rgba(197, 160, 89, 0.3) !important;
   color: var(--accent-gold) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
   text-shadow: none !important;
-  transition: all 0.25s ease !important;
+  transition: all 0.2s ease !important;
 }
 
-.tl-slidenav-next:hover .tl-slidenav-icon,
-.tl-slidenav-previous:hover .tl-slidenav-icon {
-  color: var(--accent-gold-hover) !important;
-  filter: drop-shadow(0 0 10px var(--accent-gold-glow)) !important;
+.tl-slidenav-icon:before {
+  line-height: 1 !important;
+  display: block !important;
 }
 
-/* Restored Upcoming Event Title Previews */
-.tl-slidenav-title,
 .tl-slidenav-previous .tl-slidenav-title,
 .tl-slidenav-next .tl-slidenav-title {
-  color: var(--text-primary) !important;
-  text-shadow: none !important;
+  grid-area: title;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  max-width: 170px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
   font-family: var(--font-serif) !important;
-  font-size: 13px !important;
-  line-height: 1.3 !important;
-  letter-spacing: 0.02em !important;
-  opacity: 0.45 !important;
-  transition: opacity 0.25s ease, color 0.25s ease !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: #f0ede6 !important;
+  text-shadow: none !important;
+  opacity: 0.8 !important;
+  transition: all 0.2s ease !important;
+}
+
+.tl-slidenav-previous .tl-slidenav-description,
+.tl-slidenav-next .tl-slidenav-description {
+  grid-area: date;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  max-width: 170px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-family: monospace !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  color: var(--accent-gold) !important;
+  text-shadow: none !important;
+  opacity: 0.6 !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Hover & Focus States: Glow, Color Shift & Gentle Lift */
+.tl-slidenav-previous:hover .tl-slidenav-content-container,
+.tl-slidenav-next:hover .tl-slidenav-content-container {
+  background: rgba(22, 28, 40, 0.96) !important;
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 20px var(--accent-gold-glow), 0 8px 30px rgba(0, 0, 0, 0.7) !important;
+  transform: translateY(-2px);
+}
+
+.tl-slidenav-previous:hover .tl-slidenav-icon,
+.tl-slidenav-next:hover .tl-slidenav-icon {
+  background: var(--accent-gold) !important;
+  color: #0d0f14 !important;
+  border-color: var(--accent-gold) !important;
 }
 
 .tl-slidenav-previous:hover .tl-slidenav-title,
 .tl-slidenav-next:hover .tl-slidenav-title {
+  color: #ffffff !important;
   opacity: 1 !important;
-  color: var(--accent-gold) !important;
-}
-
-/* Restored Upcoming Event Date & Description Previews */
-.tl-slidenav-description,
-.tl-slidenav-previous .tl-slidenav-description,
-.tl-slidenav-next .tl-slidenav-description {
-  color: var(--text-secondary) !important;
-  text-shadow: none !important;
-  font-family: var(--font-body) !important;
-  font-size: 11px !important;
-  opacity: 0 !important;
-  transition: opacity 0.25s ease !important;
 }
 
 .tl-slidenav-previous:hover .tl-slidenav-description,
 .tl-slidenav-next:hover .tl-slidenav-description {
-  opacity: 0.85 !important;
+  color: var(--accent-gold) !important;
+  opacity: 1 !important;
+}
+
+/* Active Press State */
+.tl-slidenav-previous:active .tl-slidenav-content-container,
+.tl-slidenav-next:active .tl-slidenav-content-container {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Mobile Screens: Collapse to Clean Circular Buttons */
+@media (max-width: 640px) {
+  .tl-slidenav-previous {
+    left: 8px !important;
+  }
+  .tl-slidenav-next {
+    right: 8px !important;
+  }
+  .tl-slidenav-previous .tl-slidenav-content-container,
+  .tl-slidenav-next .tl-slidenav-content-container {
+    padding: 4px !important;
+    border-radius: 50% !important;
+  }
+  .tl-slidenav-previous .tl-slidenav-title,
+  .tl-slidenav-next .tl-slidenav-title,
+  .tl-slidenav-previous .tl-slidenav-description,
+  .tl-slidenav-next .tl-slidenav-description {
+    display: none !important;
+  }
 }
 
 /* Zoom Menubar on Bottom-Left */
