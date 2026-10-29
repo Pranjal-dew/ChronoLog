@@ -326,7 +326,7 @@ function syncActiveSlideContext() {
     }
 
     if (currentEvent) {
-      const evYear = parseInt(currentEvent.start_date?.year, 10);
+      const evYear = parseInt(currentEvent.start_date?.data?.year || currentEvent.start_date?.year, 10);
       let matchingEraIdx = eraSlideMap.findIndex(m => evYear >= m.startYear && evYear <= m.endYear);
       if (matchingEraIdx !== -1) {
         updateActiveEraPill(matchingEraIdx);
@@ -351,7 +351,8 @@ function syncActiveSlideContext() {
             badgeBar.innerHTML += `<span class="slide-badge slide-badge-group">${currentEvent.group}</span>`;
           }
 
-          const dateStr = currentEvent.display_date || currentEvent.start_date?.year || '';
+          const rawYear = currentEvent.start_date?.data?.year || currentEvent.start_date?.year || '';
+          const dateStr = currentEvent.display_date || rawYear;
           if (dateStr) {
             badgeBar.innerHTML += `<span class="slide-badge slide-badge-date">${dateStr}</span>`;
           }
