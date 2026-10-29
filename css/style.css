@@ -646,7 +646,7 @@ html, body {
 }
 
 /* ==========================================================================
-   Navigation Arrows (Prev / Next Buttons on Slides) — Precision Archival Capsule
+   Navigation Arrows (Prev / Next Buttons on Slides) — Expanding Glass Capsule
    ========================================================================== */
 
 .tl-slidenav-previous,
@@ -663,67 +663,62 @@ html, body {
 }
 
 .tl-slidenav-previous {
-  left: 20px !important;
+  left: 18px !important;
   right: auto !important;
 }
 
 .tl-slidenav-next {
-  right: 20px !important;
+  right: 18px !important;
   left: auto !important;
 }
 
-/* Glassmorphic Navigation Card Capsule */
+/* Glassmorphic Capsule — Compact & Semi-transparent in Rest State */
 .tl-slidenav-previous .tl-slidenav-content-container,
 .tl-slidenav-next .tl-slidenav-content-container {
-  display: grid !important;
+  display: flex !important;
   align-items: center !important;
   width: auto !important;
   min-width: 0 !important;
-  max-width: 260px !important;
-  padding: 8px 14px !important;
-  background: rgba(18, 22, 31, 0.88) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(197, 160, 89, 0.3) !important;
+  max-width: 44px !important;
+  padding: 4px !important;
+  background: rgba(18, 22, 31, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(197, 160, 89, 0.2) !important;
   border-radius: 9999px !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55), 0 0 1px rgba(197, 160, 89, 0.25) !important;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  opacity: 0.5 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.25s ease,
+              border-color 0.25s ease,
+              opacity 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease !important;
 }
 
-/* Symmetrical Grid Alignments */
+/* Symmetrical Alignment */
 .tl-slidenav-previous .tl-slidenav-content-container {
-  grid-template-areas:
-    "icon title"
-    "icon date";
-  grid-template-columns: auto minmax(0, 1fr);
-  column-gap: 10px;
-  row-gap: 1px;
-  text-align: left;
+  flex-direction: row !important;
 }
 
 .tl-slidenav-next .tl-slidenav-content-container {
-  grid-template-areas:
-    "title icon"
-    "date  icon";
-  grid-template-columns: minmax(0, 1fr) auto;
-  column-gap: 10px;
-  row-gap: 1px;
-  text-align: right;
+  flex-direction: row !important;
 }
 
-/* Map Grid Areas */
+/* Arrow Icon Button */
 .tl-slidenav-previous .tl-slidenav-icon,
 .tl-slidenav-next .tl-slidenav-icon {
-  grid-area: icon;
   margin: 0 !important;
   padding: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
   border-radius: 50% !important;
-  background: rgba(197, 160, 89, 0.12) !important;
-  border: 1px solid rgba(197, 160, 89, 0.3) !important;
+  background: rgba(197, 160, 89, 0.1) !important;
+  border: 1px solid rgba(197, 160, 89, 0.25) !important;
   color: var(--accent-gold) !important;
   display: flex !important;
   align-items: center !important;
@@ -731,7 +726,8 @@ html, body {
   font-size: 18px !important;
   line-height: 1 !important;
   text-shadow: none !important;
-  transition: all 0.2s ease !important;
+  flex-shrink: 0 !important;
+  transition: all 0.25s ease !important;
 }
 
 .tl-slidenav-icon:before {
@@ -739,52 +735,84 @@ html, body {
   display: block !important;
 }
 
+.tl-slidenav-previous .tl-slidenav-icon {
+  order: 1 !important;
+}
+
+.tl-slidenav-next .tl-slidenav-icon {
+  order: 3 !important;
+}
+
+/* Text Previews (Collapsed & Hidden in Rest State) */
 .tl-slidenav-previous .tl-slidenav-title,
 .tl-slidenav-next .tl-slidenav-title {
-  grid-area: title;
   margin: 0 !important;
   padding: 0 !important;
   width: auto !important;
-  max-width: 170px !important;
-  white-space: nowrap !important;
+  max-width: 0px !important;
+  opacity: 0 !important;
   overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
   font-family: var(--font-serif) !important;
   font-size: 12px !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
   color: #f0ede6 !important;
   text-shadow: none !important;
-  opacity: 0.8 !important;
-  transition: all 0.2s ease !important;
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease,
+              margin 0.3s ease !important;
+}
+
+.tl-slidenav-previous .tl-slidenav-title {
+  order: 2 !important;
+}
+
+.tl-slidenav-next .tl-slidenav-title {
+  order: 1 !important;
 }
 
 .tl-slidenav-previous .tl-slidenav-description,
 .tl-slidenav-next .tl-slidenav-description {
-  grid-area: date;
   margin: 0 !important;
   padding: 0 !important;
   width: auto !important;
-  max-width: 170px !important;
-  white-space: nowrap !important;
+  max-width: 0px !important;
+  opacity: 0 !important;
   overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
   font-family: monospace !important;
   font-size: 10px !important;
   line-height: 1.2 !important;
   color: var(--accent-gold) !important;
   text-shadow: none !important;
-  opacity: 0.6 !important;
-  transition: all 0.2s ease !important;
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s ease,
+              margin 0.3s ease !important;
 }
 
-/* Hover & Focus States: Glow, Color Shift & Gentle Lift */
+.tl-slidenav-previous .tl-slidenav-description {
+  order: 3 !important;
+}
+
+.tl-slidenav-next .tl-slidenav-description {
+  order: 2 !important;
+}
+
+/* Hover State: Reveal Full Detailed Card Capsule */
 .tl-slidenav-previous:hover .tl-slidenav-content-container,
 .tl-slidenav-next:hover .tl-slidenav-content-container {
-  background: rgba(22, 28, 40, 0.96) !important;
+  max-width: 320px !important;
+  padding: 5px 14px 5px 6px !important;
+  background: rgba(18, 22, 31, 0.95) !important;
   border-color: var(--accent-gold) !important;
-  box-shadow: 0 0 20px var(--accent-gold-glow), 0 8px 30px rgba(0, 0, 0, 0.7) !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 22px var(--accent-gold-glow), 0 8px 30px rgba(0, 0, 0, 0.75) !important;
   transform: translateY(-2px);
+}
+
+.tl-slidenav-next:hover .tl-slidenav-content-container {
+  padding: 5px 6px 5px 14px !important;
 }
 
 .tl-slidenav-previous:hover .tl-slidenav-icon,
@@ -792,45 +820,37 @@ html, body {
   background: var(--accent-gold) !important;
   color: #0d0f14 !important;
   border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 10px var(--accent-gold-glow) !important;
 }
 
-.tl-slidenav-previous:hover .tl-slidenav-title,
+.tl-slidenav-previous:hover .tl-slidenav-title {
+  max-width: 170px !important;
+  opacity: 1 !important;
+  margin-left: 10px !important;
+}
+
 .tl-slidenav-next:hover .tl-slidenav-title {
-  color: #ffffff !important;
+  max-width: 170px !important;
   opacity: 1 !important;
+  margin-right: 8px !important;
 }
 
-.tl-slidenav-previous:hover .tl-slidenav-description,
+.tl-slidenav-previous:hover .tl-slidenav-description {
+  max-width: 80px !important;
+  opacity: 0.9 !important;
+  margin-left: 8px !important;
+}
+
 .tl-slidenav-next:hover .tl-slidenav-description {
-  color: var(--accent-gold) !important;
-  opacity: 1 !important;
+  max-width: 80px !important;
+  opacity: 0.9 !important;
+  margin-right: 10px !important;
 }
 
 /* Active Press State */
 .tl-slidenav-previous:active .tl-slidenav-content-container,
 .tl-slidenav-next:active .tl-slidenav-content-container {
-  transform: translateY(0px) scale(0.98);
-}
-
-/* Mobile Screens: Collapse to Clean Circular Buttons */
-@media (max-width: 640px) {
-  .tl-slidenav-previous {
-    left: 8px !important;
-  }
-  .tl-slidenav-next {
-    right: 8px !important;
-  }
-  .tl-slidenav-previous .tl-slidenav-content-container,
-  .tl-slidenav-next .tl-slidenav-content-container {
-    padding: 4px !important;
-    border-radius: 50% !important;
-  }
-  .tl-slidenav-previous .tl-slidenav-title,
-  .tl-slidenav-next .tl-slidenav-title,
-  .tl-slidenav-previous .tl-slidenav-description,
-  .tl-slidenav-next .tl-slidenav-description {
-    display: none !important;
-  }
+  transform: translateY(0px) scale(0.97);
 }
 
 /* Zoom Menubar on Bottom-Left */
