@@ -299,27 +299,31 @@ function syncActiveSlideContext() {
   if (!window.timeline || !currentTimelineData) return;
 
   setTimeout(() => {
-    const activeSlide = document.querySelector('.tl-slide.tl-slide-active');
-    if (!activeSlide) return;
+    let slideObj = null;
+    if (typeof window.timeline.getCurrentSlide === 'function') {
+      slideObj = window.timeline.getCurrentSlide();
+    }
+
+    const currentId = window.timeline.current_id;
+    const events = currentTimelineData.events || [];
 
     // Check if title slide
-    if (activeSlide.classList.contains('tl-slide-titleslide')) {
+    const isTitle = (!currentId || (slideObj && slideObj.data && slideObj.data.type === 'title') || (slideObj && slideObj._el && slideObj._el.container && slideObj._el.container.classList.contains('tl-slide-titleslide')));
+
+    if (isTitle) {
       updateActiveEraPill(-1);
       return;
     }
 
-    const events = currentTimelineData.events || [];
-    const currentId = window.timeline.current_id;
-    let currentEvent = events.find(e => e.id === currentId);
+    let currentEvent = events.find(e => e.id === currentId || e.unique_id === currentId);
 
-    // Fallback if current_id not matching: inspect slide headline
-    if (!currentEvent) {
-      const headlineText = activeSlide.querySelector('.tl-headline')?.textContent?.trim();
-      if (headlineText) {
-        currentEvent = events.find(e => e.text?.headline?.trim() === headlineText);
-      }
+    // Fallback: match by current slide data or headline text
+    if (!currentEvent && slideObj && slideObj.data) {
+      currentEvent = events.find(e => e.id === slideObj.data.id || e.text?.headline === slideObj.data.text?.headline);
     }
-    if (!currentEvent) currentEvent = events[0];
+    if (!currentEvent && events.length > 0) {
+      currentEvent = events[0];
+    }
 
     if (currentEvent) {
       const evYear = parseInt(currentEvent.start_date?.year, 10);
@@ -328,32 +332,35 @@ function syncActiveSlideContext() {
         updateActiveEraPill(matchingEraIdx);
       }
 
-      // Inject context badges if not already present in the active slide
-      const headlineEl = activeSlide.querySelector('.tl-headline');
-      if (headlineEl && !activeSlide.querySelector('.slide-context-bar')) {
-        const badgeBar = document.createElement('div');
-        badgeBar.className = 'slide-context-bar';
+      // Inject context badges if not already present in the active slide DOM
+      const slideEl = slideObj?._el?.container || document.querySelector(`.tl-slide[id*="${currentEvent.unique_id || currentEvent.id || ''}"]`);
+      if (slideEl) {
+        const headlineEl = slideEl.querySelector('.tl-headline');
+        if (headlineEl && !slideEl.querySelector('.slide-context-bar')) {
+          const badgeBar = document.createElement('div');
+          badgeBar.className = 'slide-context-bar';
 
-        if (matchingEraIdx !== -1 && currentTimelineData.eras && currentTimelineData.eras[matchingEraIdx]) {
-          const eraData = currentTimelineData.eras[matchingEraIdx];
-          const eraHeadline = eraData.text?.headline || 'Modern Era';
-          const eraShort = eraData.text?._titleOnly || eraHeadline.replace(/<[^>]*>/g, '').split('(')[0].trim();
-          badgeBar.innerHTML += `<span class="slide-badge slide-badge-era">${eraShort}</span>`;
+          if (matchingEraIdx !== -1 && currentTimelineData.eras && currentTimelineData.eras[matchingEraIdx]) {
+            const eraData = currentTimelineData.eras[matchingEraIdx];
+            const eraHeadline = eraData.text?.headline || 'Modern Era';
+            const eraShort = eraData.text?._titleOnly || eraHeadline.replace(/<[^>]*>/g, '').split('(')[0].trim();
+            badgeBar.innerHTML += `<span class="slide-badge slide-badge-era">${eraShort}</span>`;
+          }
+
+          if (currentEvent.group) {
+            badgeBar.innerHTML += `<span class="slide-badge slide-badge-group">${currentEvent.group}</span>`;
+          }
+
+          const dateStr = currentEvent.display_date || currentEvent.start_date?.year || '';
+          if (dateStr) {
+            badgeBar.innerHTML += `<span class="slide-badge slide-badge-date">${dateStr}</span>`;
+          }
+
+          headlineEl.parentNode.insertBefore(badgeBar, headlineEl);
         }
-
-        if (currentEvent.group) {
-          badgeBar.innerHTML += `<span class="slide-badge slide-badge-group">${currentEvent.group}</span>`;
-        }
-
-        const dateStr = currentEvent.display_date || currentEvent.start_date?.year || '';
-        if (dateStr) {
-          badgeBar.innerHTML += `<span class="slide-badge slide-badge-date">${dateStr}</span>`;
-        }
-
-        headlineEl.parentNode.insertBefore(badgeBar, headlineEl);
       }
     }
-  }, 120);
+  }, 100);
 }
 
 function initKeyboardHotkeys() {
@@ -538,9 +545,10 @@ function renderTimeline(data, isLive = false) {
       timenav_position: 'bottom',
       timenav_height_percentage: 42,
       timenav_mobile_height_percentage: 45,
-      timenav_height_min: 210,
+      timenav_height_min: 260,
+      marker_width_min: 150,
       slide_padding_lr: 24,
-      optimal_tick_width: 90,
+      optimal_tick_width: 100,
       duration: 500
     };
 

@@ -607,6 +607,15 @@ html, body {
   bottom: 0 !important;
 }
 
+/* Minor ticks are intermediate tick marks only — hide text to prevent dual-label stacked collisions */
+.tl-timeaxis .tl-timeaxis-content-container .tl-timeaxis-minor .tl-timeaxis-tick .tl-timeaxis-tick-text {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Major ticks display the primary, high-contrast year labels */
+.tl-timeaxis .tl-timeaxis-content-container .tl-timeaxis-major .tl-timeaxis-tick .tl-timeaxis-tick-text,
 .tl-timeaxis-tick-text {
   color: #e6c875 !important; /* Crisp high-contrast parchment gold */
   font-family: var(--font-sans, 'Inter', sans-serif) !important;
@@ -636,15 +645,19 @@ html, body {
 
 /* Timeline Markers on Timenav */
 .tl-timemarker .tl-timemarker-content-container {
+  min-width: 140px !important;
   background: #161a22 !important;
   border: 1px solid #2a313d !important;
   border-radius: 6px !important;
   transition: all 0.2s ease !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
 
 .tl-timemarker .tl-headline {
   color: #f0ede6 !important;
   font-size: 0.82rem !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
 }
 
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
@@ -713,10 +726,11 @@ html, body {
   border-top-color: #4a9b7a !important;
 }
 
-/* Ambient Era Header Watermark at top of each phase */
+/* Ambient Era Watermark anchored at the bottom edge above the date ruler */
 .tl-timeera .tl-timeera-content-container {
   position: absolute !important;
-  top: 8px !important;
+  bottom: 6px !important;
+  top: auto !important;
   left: 10px !important;
   height: auto !important;
   width: auto !important;
@@ -982,8 +996,13 @@ html, body {
   transform: translateY(0px) scale(0.97);
 }
 
-/* Zoom Menubar on Bottom-Left */
+/* Zoom Menubar positioned on Bottom-Right (Clear of swimlane labels & markers) */
 .tl-menubar {
+  left: auto !important;
+  right: 16px !important;
+  bottom: 48px !important;
+  top: auto !important;
+  z-index: 25 !important;
   background: rgba(22, 26, 34, 0.9) !important;
   border: 1px solid var(--border-color) !important;
   border-radius: 8px !important;
@@ -1005,6 +1024,16 @@ html, body {
 .tl-credit {
   color: var(--text-muted) !important;
   font-size: 0.8rem !important;
+  margin-top: 6px !important;
+}
+
+.tl-slide-titleslide .tl-credit {
+  display: inline-block !important;
+  margin-top: 10px !important;
+  padding: 4px 10px !important;
+  background: rgba(22, 26, 34, 0.75) !important;
+  border: 1px solid rgba(197, 160, 89, 0.25) !important;
+  border-radius: 4px !important;
 }
 
 .tl-credit a, 

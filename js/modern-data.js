@@ -29,7 +29,7 @@ const modernTimelineData = {
       },
       "group": "Company Rule",
       "media": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Aurangzeb_in_later_years.jpg/800px-Aurangzeb_in_later_years.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Aurangzeb-portrait.jpg",
         "credit": "Wikimedia Commons",
         "caption": "Emperor Aurangzeb reading in his later years"
       },
@@ -51,7 +51,7 @@ const modernTimelineData = {
       },
       "group": "Company Rule",
       "media": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Lord_Clive_meeting_with_Mir_Jafar_after_the_Battle_of_Plassey.jpg/1280px-Lord_Clive_meeting_with_Mir_Jafar_after_the_Battle_of_Plassey.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Lord_Clive_meeting_with_Mir_Jafar_after_the_Battle_of_Plassey.jpg",
         "credit": "Francis Hayman / National Portrait Gallery",
         "caption": "Robert Clive meeting Mir Jafar after Plassey (1757)"
       },
@@ -73,7 +73,7 @@ const modernTimelineData = {
       },
       "group": "Company Rule",
       "media": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive%2C_August_1765.jpg/1280px-Shah_%27Alam_conveying_the_grant_of_the_Diwani_to_Lord_Clive%2C_August_1765.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Treaty_of_Allahabad%2C_August_16%2C_1765.jpg/960px-The_Treaty_of_Allahabad%2C_August_16%2C_1765.jpg",
         "credit": "Benjamin West / British Library",
         "caption": "Shah Alam II granting the Diwani of Bengal to Lord Clive (August 1765)"
       },
@@ -110,9 +110,9 @@ const modernTimelineData = {
       },
       "group": "Revolt & Resistance",
       "media": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Capture_of_Bahadur_Shah_Zafar.jpg/1280px-Capture_of_Bahadur_Shah_Zafar.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bahadur_Shah_II_of_India.jpg/960px-Bahadur_Shah_II_of_India.jpg",
         "credit": "Wikimedia Commons",
-        "caption": "Capture of Bahadur Shah Zafar by Major Hodson in Delhi (1857)"
+        "caption": "Bahadur Shah Zafar, the last Mughal Emperor (1857)"
       },
       "background": {
         "color": "#2c1717"
@@ -138,7 +138,7 @@ const modernTimelineData = {
         "url": "https://youtu.be/codWemzsW40?si=6F3PDaZoeCZsHuv6"
       },
       "background": {
-        "color": "#409c5b"
+        "color": "#17221b"
       }
     },
     {
