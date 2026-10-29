@@ -178,8 +178,41 @@ function renderTimeline(data, isLive = false) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', async function () {
-  // 1. Fetch Live Data from Google Sheets if available
+// Data Resolution Priority:
+// 1. localStorage (Instant live preview from ChronoLog Studio in current browser)
+// 2. modernTimelineData (Master curated data from js/modern-data.js on disk & GitHub Pages)
+// 3. Google Sheets CSV (Cloud backup)
+async function loadTimelineData() {
+  // 1. Check localStorage for instant live updates
+  const localSaved = localStorage.getItem('chronolog_modern_events');
+  if (localSaved) {
+    try {
+      const parsedEvents = JSON.parse(localSaved);
+      if (Array.isArray(parsedEvents) && parsedEvents.length > 0) {
+        const fullData = {
+          title: (typeof modernTimelineData !== 'undefined' && modernTimelineData.title) ? modernTimelineData.title : {
+            text: {
+              headline: "Modern History (1707 – 1947)",
+              text: "<p>Spectrum’s Modern History covers the history of India from the decline of the Mughal Empire to Independence (1707 to 1947).</p>"
+            }
+          },
+          events: parsedEvents
+        };
+        renderTimeline(fullData, true);
+        return;
+      }
+    } catch (e) {
+      console.warn('Could not parse localStorage events:', e);
+    }
+  }
+
+  // 2. Local modern-data.js master dataset
+  if (typeof modernTimelineData !== 'undefined' && modernTimelineData.events && modernTimelineData.events.length > 0) {
+    renderTimeline(modernTimelineData, false);
+    return;
+  }
+
+  // 3. Fall back to Google Sheet if local data is not available
   try {
     const res = await fetch(GOOGLE_SHEET_CSV_URL, { cache: 'no-cache' });
     if (res.ok) {
@@ -192,9 +225,30 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
     throw new Error('Failed to parse remote Google Sheet');
   } catch (err) {
-    console.warn('Could not fetch Google Sheet, falling back to local modern-data.js:', err);
-    if (typeof modernTimelineData !== 'undefined') {
-      renderTimeline(modernTimelineData, false);
+    console.warn('Could not fetch Google Sheet:', err);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  loadTimelineData();
+
+  // Instant Cross-Tab Live Sync from ChronoLog Studio
+  window.addEventListener('storage', function (e) {
+    if (e.key === 'chronolog_modern_events') {
+      console.log('ChronoLog Studio updated events in another tab. Reloading timeline...');
+      location.reload();
     }
+  });
+
+  if ('BroadcastChannel' in window) {
+    try {
+      const syncChannel = new BroadcastChannel('chronolog_sync');
+      syncChannel.onmessage = function (event) {
+        if (event.data && event.data.type === 'UPDATE') {
+          console.log('Received live broadcast update from ChronoLog Studio. Refreshing...');
+          location.reload();
+        }
+      };
+    } catch (e) {}
   }
 });
