@@ -158,11 +158,56 @@ function csvToTimelineJSON(csvText) {
   return { title, events, eras };
 }
 
+function populateCategoryFilter(events) {
+  const filterSelect = document.getElementById('category-filter');
+  if (!filterSelect || !events) return;
+
+  const groups = [...new Set(events.map(ev => ev.group).filter(Boolean))].sort();
+  filterSelect.innerHTML = '<option value="all">🔍 All Topics / Swimlanes</option>';
+  groups.forEach(g => {
+    const opt = document.createElement('option');
+    opt.value = g;
+    opt.textContent = `📌 ${g}`;
+    filterSelect.appendChild(opt);
+  });
+
+  filterSelect.addEventListener('change', function () {
+    const val = this.value;
+    if (val === 'all') {
+      if (window.timeline) window.timeline.goTo(0);
+      return;
+    }
+    const idx = events.findIndex(ev => ev.group === val);
+    if (idx !== -1 && window.timeline) {
+      window.timeline.goTo(idx + 1); // +1 because index 0 is the title slide
+    }
+  });
+}
+
+function initFullscreenToggle() {
+  const btn = document.getElementById('btn-fullscreen');
+  if (!btn) return;
+
+  btn.addEventListener('click', function () {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => console.warn(err));
+      btn.innerHTML = '🗗';
+      btn.title = 'Exit Fullscreen';
+    } else {
+      document.exitFullscreen().catch(err => console.warn(err));
+      btn.innerHTML = '⛶';
+      btn.title = 'Enter Fullscreen';
+    }
+  });
+}
+
 function renderTimeline(data, isLive = false) {
   const eventCountEl = document.getElementById('event-count');
   if (eventCountEl && data.events) {
     eventCountEl.textContent = `${data.events.length} Historical Milestones`;
   }
+
+  populateCategoryFilter(data.events);
 
   if (typeof TL !== 'undefined') {
     const timelineOptions = {
@@ -170,6 +215,9 @@ function renderTimeline(data, isLive = false) {
       initial_zoom: 2,
       scale_factor: 1.5,
       timenav_position: 'bottom',
+      timenav_height_percentage: 38,
+      timenav_mobile_height_percentage: 42,
+      slide_padding_lr: 24,
       optimal_tick_width: 80,
       duration: 500
     };
@@ -196,7 +244,8 @@ async function loadTimelineData() {
               text: "<p>Spectrum’s Modern History covers the history of India from the decline of the Mughal Empire to Independence (1707 to 1947).</p>"
             }
           },
-          events: parsedEvents
+          events: parsedEvents,
+          eras: (typeof modernTimelineData !== 'undefined' && modernTimelineData.eras) ? modernTimelineData.eras : []
         };
         renderTimeline(fullData, true);
         return;
@@ -230,6 +279,7 @@ async function loadTimelineData() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  initFullscreenToggle();
   loadTimelineData();
 
   // Instant Cross-Tab Live Sync from ChronoLog Studio

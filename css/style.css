@@ -150,9 +150,59 @@ html, body {
   color: var(--accent-gold);
   background: rgba(197, 160, 89, 0.12);
   border: 1px solid rgba(197, 160, 89, 0.3);
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 9999px;
   font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* Category Jump Filter */
+.category-filter-select {
+  background: var(--bg-secondary);
+  color: var(--accent-gold);
+  border: 1px solid var(--border-color);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  max-width: 200px;
+}
+
+.category-filter-select:hover,
+.category-filter-select:focus {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 10px var(--accent-gold-glow);
+}
+
+.category-filter-select option {
+  background: #161a22;
+  color: #f0ede6;
+}
+
+/* Fullscreen Toggle Button */
+.btn-fullscreen {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.btn-fullscreen:hover {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  background: rgba(197, 160, 89, 0.1);
 }
 
 /* ==========================================================================
@@ -172,7 +222,7 @@ html, body {
 }
 
 /* ==========================================================================
-   TimelineJS Custom Overrides
+   TimelineJS Custom Overrides & Fine-Tuned Dark Archival Theme
    ========================================================================== */
 
 /* Dark Archival Styling for TimelineJS */
@@ -190,31 +240,135 @@ html, body {
 .tl-headline {
   font-family: var(--font-serif) !important;
   color: var(--accent-gold) !important;
+  letter-spacing: 0.02em !important;
 }
 
 .tl-text p {
   color: var(--text-secondary) !important;
-  line-height: 1.7 !important;
+  line-height: 1.75 !important;
   font-size: 1.05rem !important;
 }
 
+/* Timeline Navigation Area */
 .tl-timenav {
   background: var(--bg-secondary) !important;
   border-top: 1px solid var(--border-color) !important;
 }
 
-.tl-timemarker .tl-headline {
-  color: var(--text-primary) !important;
-}
-
 .tl-timeaxis-tick-text {
   color: var(--text-muted) !important;
+  font-size: 0.75rem !important;
 }
 
 .tl-timegroup-message {
   color: var(--accent-gold) !important;
   font-family: var(--font-serif) !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* Timeline Markers on Timenav */
+.tl-timemarker .tl-timemarker-content-container {
+  background: #161a22 !important;
+  border: 1px solid #2a313d !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.tl-timemarker .tl-headline {
+  color: #f0ede6 !important;
+  font-size: 0.82rem !important;
+}
+
+.tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
+  background: #1f242e !important;
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 12px var(--accent-gold-glow) !important;
+}
+
+.tl-timemarker.tl-timemarker-active .tl-headline {
+  color: var(--accent-gold) !important;
+  font-weight: 700 !important;
+}
+
+.tl-timemarker-line {
+  background-color: rgba(197, 160, 89, 0.35) !important;
+}
+
+/* TimelineJS Era Bands (Horizontal phase spans across the axis) */
+.tl-era {
+  background: rgba(197, 160, 89, 0.09) !important;
+  border-top: 2px solid var(--accent-gold) !important;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25) !important;
+  border-radius: 3px !important;
+}
+
+.tl-era .tl-headline,
+.tl-era-title {
+  color: var(--accent-gold) !important;
+  font-family: var(--font-serif) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* Navigation Arrows (Prev / Next Buttons on Slides) */
+.tl-slidenav-next, 
+.tl-slidenav-previous {
+  color: var(--accent-gold) !important;
+  transition: all 0.2s ease !important;
+}
+
+.tl-slidenav-next .tl-slidenav-icon,
+.tl-slidenav-previous .tl-slidenav-icon {
+  background-color: rgba(22, 26, 34, 0.9) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--accent-gold) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.2s ease !important;
+}
+
+.tl-slidenav-next:hover .tl-slidenav-icon,
+.tl-slidenav-previous:hover .tl-slidenav-icon {
+  background-color: var(--accent-gold) !important;
+  color: #0d0f14 !important;
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 16px var(--accent-gold-glow) !important;
+  transform: scale(1.08) !important;
+}
+
+/* Zoom Menubar on Bottom-Left */
+.tl-menubar {
+  background: rgba(22, 26, 34, 0.9) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.tl-menubar-button {
+  color: var(--text-secondary) !important;
+}
+
+.tl-menubar-button:hover {
+  color: var(--accent-gold) !important;
+  background: rgba(197, 160, 89, 0.15) !important;
+}
+
+/* Media Credits and Captions */
+.tl-caption, 
+.tl-credit {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem !important;
+}
+
+.tl-credit a, 
+.tl-caption a {
+  color: var(--accent-gold) !important;
+  text-decoration: underline !important;
 }
 
 /* Custom Reading Book Citation Card inside Timeline text */
