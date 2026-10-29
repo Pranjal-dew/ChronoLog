@@ -646,122 +646,77 @@ html, body {
 }
 
 /* ==========================================================================
-   Navigation Arrows (Prev / Next Buttons on Slides) — Refined Archival UI
+   Navigation Arrows (Prev / Next Buttons on Slides) — Restored Original Architecture
    ========================================================================== */
 
+/* Restore TimelineJS's original interactive side paddles with title & date previews */
 .tl-slidenav-previous,
 .tl-slidenav-next {
   top: 45% !important;
   transform: translateY(-50%) !important;
-  z-index: 30 !important;
+  z-index: 25 !important;
   cursor: pointer !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border-radius: 8px !important;
+  transition: background 0.25s ease, opacity 0.25s ease !important;
 }
 
-.tl-slidenav-previous {
-  left: 20px !important;
+.tl-slidenav-previous:hover {
+  background: linear-gradient(to right, rgba(13, 15, 20, 0.88) 0%, rgba(13, 15, 20, 0.45) 75%, transparent 100%) !important;
 }
 
-.tl-slidenav-next {
-  right: 20px !important;
+.tl-slidenav-next:hover {
+  background: linear-gradient(to left, rgba(13, 15, 20, 0.88) 0%, rgba(13, 15, 20, 0.45) 75%, transparent 100%) !important;
 }
 
-/* Reset TimelineJS's 100px wide wrapper */
-.tl-slidenav-previous .tl-slidenav-content-container,
-.tl-slidenav-next .tl-slidenav-content-container {
-  width: auto !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: transparent !important;
-}
-
-/* Clean circular glassmorphic arrow button */
+/* Navigation Arrow Icons */
 .tl-slidenav-next .tl-slidenav-icon,
 .tl-slidenav-previous .tl-slidenav-icon {
-  width: 48px !important;
-  height: 48px !important;
-  min-width: 48px !important;
-  min-height: 48px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 50% !important;
-  background: rgba(19, 23, 31, 0.85) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border: 1.5px solid rgba(197, 160, 89, 0.35) !important;
   color: var(--accent-gold) !important;
-  font-size: 22px !important;
-  line-height: 1 !important;
   text-shadow: none !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55), 0 0 1px rgba(197, 160, 89, 0.3) !important;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  position: relative !important;
+  transition: all 0.25s ease !important;
 }
 
-/* Center icon font glyph precisely inside the circle */
-.tl-slidenav-next .tl-slidenav-icon:before,
-.tl-slidenav-previous .tl-slidenav-icon:before {
-  display: block !important;
-  text-shadow: none !important;
-  line-height: 1 !important;
-}
-
-/* Hover State: Radiant Gold Glow & Scale */
 .tl-slidenav-next:hover .tl-slidenav-icon,
 .tl-slidenav-previous:hover .tl-slidenav-icon {
-  background: var(--accent-gold) !important;
-  color: #0d0f14 !important;
-  border-color: var(--accent-gold) !important;
-  box-shadow: 0 0 22px var(--accent-gold-glow), 0 8px 24px rgba(0, 0, 0, 0.7) !important;
-  transform: scale(1.12) !important;
+  color: var(--accent-gold-hover) !important;
+  filter: drop-shadow(0 0 10px var(--accent-gold-glow)) !important;
 }
 
-/* Active Press State */
-.tl-slidenav-next:active .tl-slidenav-icon,
-.tl-slidenav-previous:active .tl-slidenav-icon {
-  transform: scale(0.96) !important;
-  box-shadow: 0 0 12px var(--accent-gold-glow) !important;
-}
-
-/* Hide TimelineJS's messy 80px floating title/description text and white shadows */
+/* Restored Upcoming Event Title Previews */
 .tl-slidenav-title,
-.tl-slidenav-description,
 .tl-slidenav-previous .tl-slidenav-title,
-.tl-slidenav-next .tl-slidenav-title,
+.tl-slidenav-next .tl-slidenav-title {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+  font-family: var(--font-serif) !important;
+  font-size: 13px !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.02em !important;
+  opacity: 0.45 !important;
+  transition: opacity 0.25s ease, color 0.25s ease !important;
+}
+
+.tl-slidenav-previous:hover .tl-slidenav-title,
+.tl-slidenav-next:hover .tl-slidenav-title {
+  opacity: 1 !important;
+  color: var(--accent-gold) !important;
+}
+
+/* Restored Upcoming Event Date & Description Previews */
+.tl-slidenav-description,
 .tl-slidenav-previous .tl-slidenav-description,
 .tl-slidenav-next .tl-slidenav-description {
-  display: none !important;
+  color: var(--text-secondary) !important;
+  text-shadow: none !important;
+  font-family: var(--font-body) !important;
+  font-size: 11px !important;
   opacity: 0 !important;
-  visibility: hidden !important;
+  transition: opacity 0.25s ease !important;
 }
 
-/* Responsive adjustment on mobile screens */
-@media (max-width: 640px) {
-  .tl-slidenav-previous {
-    left: 8px !important;
-  }
-  .tl-slidenav-next {
-    right: 8px !important;
-  }
-  .tl-slidenav-next .tl-slidenav-icon,
-  .tl-slidenav-previous .tl-slidenav-icon {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    min-height: 38px !important;
-    font-size: 18px !important;
-  }
+.tl-slidenav-previous:hover .tl-slidenav-description,
+.tl-slidenav-next:hover .tl-slidenav-description {
+  opacity: 0.85 !important;
 }
 
 /* Zoom Menubar on Bottom-Left */
