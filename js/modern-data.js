@@ -17,6 +17,7 @@ const modernTimelineData = {
   "events": [
     {
       "id": "evt_1707_aurangzeb",
+      "display_date": "03 Mar 1707",
       "start_date": {
         "year": "1707",
         "month": "3",
@@ -38,6 +39,7 @@ const modernTimelineData = {
     },
     {
       "id": "evt_1757_plassey",
+      "display_date": "23 Jun 1757",
       "start_date": {
         "year": "1757",
         "month": "6",
@@ -59,6 +61,7 @@ const modernTimelineData = {
     },
     {
       "id": "evt_1764_buxar",
+      "display_date": "22 Oct 1764",
       "start_date": {
         "year": "1764",
         "month": "10",
@@ -80,6 +83,7 @@ const modernTimelineData = {
     },
     {
       "id": "evt_1773_regulating_act",
+      "display_date": "1773",
       "start_date": {
         "year": "1773"
       },
@@ -94,6 +98,7 @@ const modernTimelineData = {
     },
     {
       "id": "evt_1857_revolt",
+      "display_date": "10 May 1857",
       "start_date": {
         "year": "1857",
         "month": "5",
@@ -115,6 +120,7 @@ const modernTimelineData = {
     },
     {
       "id": "evt_0_1869",
+      "display_date": "02 Oct 1869 – 30 Jan 1948",
       "start_date": {
         "year": "1869",
         "month": "10",
@@ -137,6 +143,7 @@ const modernTimelineData = {
     },
     {
       "id": "evt_1793266634084",
+      "display_date": "25 Dec 1876 – 11 Sep 1948",
       "start_date": {
         "year": "1876",
         "month": "12",
@@ -164,6 +171,7 @@ const modernTimelineData = {
         "month": "11",
         "day": "14"
       },
+      "display_date": "14 Nov 1889 – 27 May 1964",
       "end_date": {
         "year": "1964",
         "month": "5",
@@ -182,6 +190,7 @@ const modernTimelineData = {
         "month": "1",
         "day": "23"
       },
+      "display_date": "23 Jan 1897 – 18 Aug 1945",
       "end_date": {
         "year": "1945",
         "month": "8",
@@ -204,6 +213,7 @@ const modernTimelineData = {
         "month": "4",
         "day": "13"
       },
+      "display_date": "13 Apr 1919",
       "text": {
         "headline": "Jallianwala Bagh massacre",
         "text": "<p>Jallianwala Bagh is a historic garden and memorial of national importance close to the Golden Temple complex in Amritsar, Punjab, India, preserved in the memory of those wounded and killed in the Jallianwala Bagh Massacre that took place on the site on the festival of Baisakhi Day.</p>"

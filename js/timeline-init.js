@@ -429,8 +429,42 @@ function initStudyLightbox() {
   }
 }
 
+const MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function formatToDDMMMYYYY(dateObj) {
+  if (!dateObj || !dateObj.year) return '';
+  const y = dateObj.year;
+  const m = dateObj.month ? parseInt(dateObj.month, 10) : null;
+  const d = dateObj.day ? parseInt(dateObj.day, 10) : null;
+
+  if (d && m && m >= 1 && m <= 12) {
+    const dayStr = d < 10 ? `0${d}` : `${d}`;
+    return `${dayStr} ${MONTH_ABBR[m - 1]} ${y}`;
+  } else if (m && m >= 1 && m <= 12) {
+    return `${MONTH_ABBR[m - 1]} ${y}`;
+  }
+  return `${y}`;
+}
+
+function normalizeEventDisplayDates(events) {
+  if (!Array.isArray(events)) return;
+  events.forEach(ev => {
+    if (!ev.display_date && ev.start_date) {
+      let formatted = formatToDDMMMYYYY(ev.start_date);
+      if (ev.end_date && ev.end_date.year) {
+        const endFormatted = formatToDDMMMYYYY(ev.end_date);
+        formatted += ` – ${endFormatted}`;
+      }
+      ev.display_date = formatted;
+    }
+  });
+}
+
 function renderTimeline(data, isLive = false) {
   currentTimelineData = data;
+  if (data.events) {
+    normalizeEventDisplayDates(data.events);
+  }
   const eventCountEl = document.getElementById('event-count');
   if (eventCountEl && data.events) {
     eventCountEl.textContent = `${data.events.length} Historical Milestones`;
