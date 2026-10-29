@@ -512,13 +512,7 @@ function normalizeEraHeadlines(eras) {
     era.text._rawHeadline = cleanHeadline;
     era.text._titleOnly = title;
     era.text._dateRange = dates;
-
-    // Structured two-line label for the bottom axis
-    if (dates) {
-      era.text.headline = `<span class="tl-era-phase-title">${title}</span><span class="tl-era-phase-dates">${dates}</span>`;
-    } else {
-      era.text.headline = `<span class="tl-era-phase-title">${title}</span>`;
-    }
+    era.text.headline = cleanHeadline;
   });
 }
 
@@ -544,12 +538,8 @@ function renderTimeline(data, isLive = false) {
       initial_zoom: 2,
       scale_factor: 1.5,
       timenav_position: 'bottom',
-      timenav_height_percentage: 42,
-      timenav_mobile_height_percentage: 45,
-      timenav_height_min: 260,
-      marker_width_min: 150,
+      timenav_height_percentage: 38,
       slide_padding_lr: 24,
-      optimal_tick_width: 100,
       duration: 500
     };
 
