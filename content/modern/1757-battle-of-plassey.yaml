@@ -1,0 +1,20 @@
+id: evt_1757_plassey
+headline: Battle of Plassey
+start_date:
+  year: 1757
+  month: 6
+  day: 23
+end_date: null
+display_date: 23 Jun 1757
+group: Company Rule
+notes: British forces under Robert Clive defeated Siraj-ud-Daulah, the Nawab of Bengal,
+  following the betrayal of commander Mir Jafar. This decisive battle laid the territorial
+  foundation of the British East India Company's rule in India, transforming it from
+  a trading company into a dominant sovereign authority.
+book_note: 'Spectrum Chapter 4: (Rise of the British Power in Bengal)'
+media:
+  url: https://upload.wikimedia.org/wikipedia/commons/c/c4/Lord_Clive_meeting_with_Mir_Jafar_after_the_Battle_of_Plassey.jpg
+  credit: Francis Hayman / National Portrait Gallery
+  caption: Robert Clive meeting Mir Jafar after Plassey (1757)
+background:
+  color: '#231f17'

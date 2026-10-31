@@ -1,0 +1,18 @@
+id: evt_1857_revolt
+headline: The Revolt of 1857 (First War of Independence)
+start_date:
+  year: 1857
+  month: 5
+  day: 10
+end_date: null
+display_date: 10 May 1857
+group: Indian Freedom Struggle
+subgroup: Armed & Revolutionary
+notes: Triggered by sepoy resentment at Meerut over greased cartridges and underlying colonial grievances, the rebellion spread across Northern and Central India under the nominal leadership of Mughal Emperor Bahadur Shah Zafar. The revolt ended the reign of the East India Company and led directly to Queen Victoria's Proclamation of 1858 transferring power to the British Crown.
+book_note: 'Spectrum Chapter 7: (The Revolt of 1857)'
+media:
+  url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bahadur_Shah_II_of_India.jpg/960px-Bahadur_Shah_II_of_India.jpg
+  credit: Wikimedia Commons
+  caption: Bahadur Shah Zafar, the last Mughal Emperor (1857)
+background:
+  color: '#2c1717'

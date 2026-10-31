@@ -1,0 +1,19 @@
+id: evt_1773_regulating_act
+headline: The Regulating Act of 1773
+start_date:
+  year: 1773
+end_date: null
+display_date: '1773'
+group: Company Rule
+subgroup: Constitutional & Acts
+notes: The British Parliament passed its first major statute to regulate the administration
+  of the East India Company. Warren Hastings was appointed the first Governor-General
+  of Bengal, subordinating Madras and Bombay presidencies, and establishing the Supreme
+  Court of Judicature at Calcutta (1774).
+book_note: 'Spectrum Chapter 26: (Constitutional Development under British Rule)'
+media:
+  url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Warren_Hastings_by_George_Stubbs.jpg/640px-Warren_Hastings_by_George_Stubbs.jpg'
+  caption: 'Warren Hastings, 1st Governor-General of Bengal appointed under the Regulating Act of 1773.'
+  credit: 'George Stubbs / National Portrait Gallery, London'
+background:
+  color: '#181f28'

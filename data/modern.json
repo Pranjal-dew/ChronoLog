@@ -1,0 +1,1174 @@
+{
+  "title": {
+    "media": {
+      "url": "https://youtu.be/zN8pjeLSzUc?si=vrna3RgLlKf3kka3",
+      "credit": "StudyIAS"
+    },
+    "text": {
+      "headline": "Modern History (1707 – 1947)",
+      "text": "<p>Spectrum’s Modern History covers the history of India from the decline of the Mughal Empire to Independence (1707 to 1947).</p><p><em>Reading notes, key leaders, and pivotal national movements.</em></p>"
+    }
+  },
+  "events": [
+    {
+      "id": "evt_1707_aurangzeb",
+      "start_date": {
+        "year": "1707",
+        "month": "3",
+        "day": "3"
+      },
+      "text": {
+        "headline": "Death of Aurangzeb & Decline of Mughals",
+        "text": "<p>The death of Mughal Emperor Aurangzeb at Ahmednagar marked the end of the centralized imperial era. Succession wars and the rise of autonomous regional kingdoms (Marathas, Nawabs of Bengal, Awadh, and Nizam of Hyderabad) created a political vacuum swiftly exploited by European mercantilist powers.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 3: (Expansion & Consolidation of British Power in India)</div>"
+      },
+      "display_date": "03 Mar 1707",
+      "group": "British Power & Policy",
+      "subgroup": "Acts & Policies",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Aurangzeb-portrait.jpg",
+        "credit": "Wikimedia Commons",
+        "caption": "Emperor Aurangzeb reading in his later years"
+      },
+      "background": {
+        "color": "#1f1d1a"
+      }
+    },
+    {
+      "id": "evt_1757_plassey",
+      "start_date": {
+        "year": "1757",
+        "month": "6",
+        "day": "23"
+      },
+      "text": {
+        "headline": "Battle of Plassey",
+        "text": "<p>British forces under Robert Clive defeated Siraj-ud-Daulah, the Nawab of Bengal, following the betrayal of commander Mir Jafar. This decisive battle laid the territorial foundation of the British East India Company's rule in India, transforming it from a trading company into a dominant sovereign authority.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 4: (Rise of the British Power in Bengal)</div>"
+      },
+      "display_date": "23 Jun 1757",
+      "group": "British Power & Policy",
+      "subgroup": "Acts & Policies",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Lord_Clive_meeting_with_Mir_Jafar_after_the_Battle_of_Plassey.jpg",
+        "credit": "Francis Hayman / National Portrait Gallery",
+        "caption": "Robert Clive meeting Mir Jafar after Plassey (1757)"
+      },
+      "background": {
+        "color": "#231f17"
+      }
+    },
+    {
+      "id": "evt_1764_buxar",
+      "start_date": {
+        "year": "1764",
+        "month": "10",
+        "day": "22"
+      },
+      "text": {
+        "headline": "Battle of Buxar & Diwani Rights",
+        "text": "<p>The combined forces of Mir Qasim (Nawab of Bengal), Shuja-ud-Daula (Nawab of Awadh), and Mughal Emperor Shah Alam II were decisively defeated by Hector Munro at Buxar. Through the subsequent Treaty of Allahabad (1765), Clive acquired the <em>Diwani</em> (fiscal administration and revenue collection rights) over Bengal, Bihar, and Orissa.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 4: (Dual Government in Bengal (1765–1772))</div>"
+      },
+      "display_date": "22 Oct 1764",
+      "group": "British Power & Policy",
+      "subgroup": "Acts & Policies",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/The_Treaty_of_Allahabad%2C_August_16%2C_1765.jpg/960px-The_Treaty_of_Allahabad%2C_August_16%2C_1765.jpg",
+        "credit": "Benjamin West / British Library",
+        "caption": "Shah Alam II granting the Diwani of Bengal to Lord Clive (August 1765)"
+      },
+      "background": {
+        "color": "#1c221a"
+      }
+    },
+    {
+      "id": "evt_1773_regulating_act",
+      "start_date": {
+        "year": "1773"
+      },
+      "text": {
+        "headline": "The Regulating Act of 1773",
+        "text": "<p>The British Parliament passed its first major statute to regulate the administration of the East India Company. Warren Hastings was appointed the first Governor-General of Bengal, subordinating Madras and Bombay presidencies, and establishing the Supreme Court of Judicature at Calcutta (1774).</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 26: (Constitutional Development under British Rule)</div>"
+      },
+      "display_date": "1773",
+      "group": "British Power & Policy",
+      "subgroup": "Constitutional & Acts",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Warren_Hastings_by_George_Stubbs.jpg/640px-Warren_Hastings_by_George_Stubbs.jpg",
+        "caption": "Warren Hastings, 1st Governor-General of Bengal appointed under the Regulating Act of 1773.",
+        "credit": "George Stubbs / National Portrait Gallery, London"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "evt_1857_revolt",
+      "start_date": {
+        "year": "1857",
+        "month": "5",
+        "day": "10"
+      },
+      "text": {
+        "headline": "The Revolt of 1857 (First War of Independence)",
+        "text": "<p>Triggered by sepoy resentment at Meerut over greased cartridges and underlying colonial grievances, the rebellion spread across Northern and Central India under the nominal leadership of Mughal Emperor Bahadur Shah Zafar. The revolt ended the reign of the East India Company and led directly to Queen Victoria's Proclamation of 1858 transferring power to the British Crown.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 7: (The Revolt of 1857)</div>"
+      },
+      "display_date": "10 May 1857",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "Armed & Revolutionary",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bahadur_Shah_II_of_India.jpg/960px-Bahadur_Shah_II_of_India.jpg",
+        "credit": "Wikimedia Commons",
+        "caption": "Bahadur Shah Zafar, the last Mughal Emperor (1857)"
+      },
+      "background": {
+        "color": "#2c1717"
+      }
+    },
+    {
+      "id": "ruler_1858_lord-canning",
+      "start_date": {
+        "year": "1858",
+        "month": "11",
+        "day": "1"
+      },
+      "text": {
+        "headline": "Lord Canning",
+        "text": "<p>First Viceroy of India after the Crown takeover via Queen Victoria's 1858 Proclamation. Abolished the Doctrine of Lapse. Enacted the Indian Penal Code 1860, Code of Criminal Procedure 1861, and Indian Councils Act 1861.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 8: Crown Rule & Administrative Changes</div>"
+      },
+      "display_date": "1858 – 1862",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1862",
+        "month": "3",
+        "day": "21"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Charles_Canning_by_Maull_%26_Polyblank.jpg/640px-Charles_Canning_by_Maull_%26_Polyblank.jpg",
+        "caption": "Lord Canning"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1864_lord-lawrence",
+      "start_date": {
+        "year": "1864",
+        "month": "1",
+        "day": "12"
+      },
+      "text": {
+        "headline": "Lord Lawrence",
+        "text": "<p>Former Chief Commissioner of Punjab. Established High Courts at Calcutta, Bombay, and Madras (1865). Followed the policy of 'Masterly Inactivity' toward Afghanistan.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 10: Foreign Policy & Frontier Administration</div>"
+      },
+      "display_date": "1864 – 1869",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1869",
+        "month": "1",
+        "day": "12"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/John_Laird_Mair_Lawrence%2C_1st_Baron_Lawrence.jpg/640px-John_Laird_Mair_Lawrence%2C_1st_Baron_Lawrence.jpg",
+        "caption": "Sir John Lawrence"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "evt_1869_lord-mayo",
+      "start_date": {
+        "year": "1869",
+        "month": "1",
+        "day": "12"
+      },
+      "text": {
+        "headline": "Lord Mayo",
+        "text": "<p>Initiated financial decentralization by granting provincial governments fixed annual sums for services. Conducted the first all-India population census (1872). Assassinated in Andaman Islands in 1872.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 10: Financial Decentralisation</div>"
+      },
+      "display_date": "1869 – 1872",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1872",
+        "month": "2",
+        "day": "8"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Lord_Mayo.jpg/640px-Lord_Mayo.jpg",
+        "credit": ""
+      }
+    },
+    {
+      "id": "evt_1869_mahatma_gandhi",
+      "start_date": {
+        "year": "1869",
+        "month": "10",
+        "day": "2"
+      },
+      "text": {
+        "headline": "Mahatma Gandhi",
+        "text": "<p>Mohandas Karamchand Gandhi was the preeminent leader of the Indian independence movement. Pioneer of Satyagraha (resistance through mass non-violent civil disobedience), he led transformative campaigns including the Champaran Satyagraha, Non-Cooperation Movement, Salt March, and Quit India Movement.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 15: Emergence of Gandhi & Non-Violent Mass Movements</div>"
+      },
+      "display_date": "02 Oct 1869 – 30 Jan 1948",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "National Leaders (Lifespans)",
+      "end_date": {
+        "year": "1948",
+        "month": "1",
+        "day": "30"
+      },
+      "media": {
+        "url": "https://youtu.be/codWemzsW40?si=6F3PDaZoeCZsHuv6",
+        "caption": "Life and Philosophy of Mahatma Gandhi",
+        "credit": "YouTube",
+        "thumbnail": "https://img.youtube.com/vi/codWemzsW40/hqdefault.jpg"
+      },
+      "background": {
+        "color": "#1a291e"
+      }
+    },
+    {
+      "id": "ruler_1874_benjamin-disraeli",
+      "start_date": {
+        "year": "1874",
+        "month": "2",
+        "day": "20"
+      },
+      "text": {
+        "headline": "Benjamin Disraeli",
+        "text": "<p>Conservative British Prime Minister. Formulated imperialist foreign policy in Asia. Passed the Royal Titles Act 1876 proclaiming Queen Victoria Kaiser-i-Hind (Empress of India). Appointed Lord Lytton as Viceroy; presided over the devastating Great Famine of 1876–78 and Second Anglo-Afghan War.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 10: Administrative Policies and Famines</div>"
+      },
+      "display_date": "1874 – 1880",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1880",
+        "month": "4",
+        "day": "21"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Benjamin_Disraeli_by_Herbert_Rose_Barraud.jpg/640px-Benjamin_Disraeli_by_Herbert_Rose_Barraud.jpg",
+        "caption": "Benjamin Disraeli, Prime Minister of the United Kingdom"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "ruler_1876_lord-lytton",
+      "start_date": {
+        "year": "1876",
+        "month": "4",
+        "day": "12"
+      },
+      "text": {
+        "headline": "Lord Lytton",
+        "text": "<p>Ultra-conservative Viceroy who organized the extravagant Delhi Durbar in 1877 during the peak of the Great Famine. Passed the oppressive Vernacular Press Act 1878 and Arms Act 1878. Provoked the disastrous Second Afghan War.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 10: Lytton's Reactionary Policies</div>"
+      },
+      "display_date": "1876 – 1880",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1880",
+        "month": "6",
+        "day": "8"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Robert_Bulwer-Lytton%2C_1st_Earl_of_Lytton.jpg/640px-Robert_Bulwer-Lytton%2C_1st_Earl_of_Lytton.jpg",
+        "caption": "Lord Lytton"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "evt_1876_jinnah",
+      "start_date": {
+        "year": "1876",
+        "month": "12",
+        "day": "25"
+      },
+      "text": {
+        "headline": "Muhammad Ali Jinnah",
+        "text": "<p>Barrister, politician, and the founder of Pakistan. Initially an ambassador of Hindu-Muslim unity through the Congress and the Lucknow Pact (1916), Jinnah later led the All-India Muslim League, advocating for constitutional safeguards (14 Points). By 1940, he championed the Lahore Resolution based on the Two-Nation Theory, culminating in the partition of British India in 1947, where he served as Pakistan's first Governor-General.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 18: Nationalist Upsurge & Muslim League Politics</div>"
+      },
+      "display_date": "25 Dec 1876 – 11 Sep 1948",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "National Leaders (Lifespans)",
+      "end_date": {
+        "year": "1948",
+        "month": "9",
+        "day": "11"
+      },
+      "media": {
+        "url": "https://youtu.be/_RmMGNseS9U",
+        "caption": "BBC Documentaries: Muhammad Ali Jinnah",
+        "credit": "BBC",
+        "thumbnail": "https://img.youtube.com/vi/_RmMGNseS9U/hqdefault.jpg"
+      },
+      "background": {
+        "color": "#022c22"
+      }
+    },
+    {
+      "id": "ruler_1880_william-e-gladstone",
+      "start_date": {
+        "year": "1880",
+        "month": "4",
+        "day": "23"
+      },
+      "text": {
+        "headline": "William E. Gladstone",
+        "text": "<p>Liberal Prime Minister ('The Grand Old Man'). Opposed Disraeli's aggressive imperialism; appointed Lord Ripon as Viceroy to enact progressive administrative and municipal reforms. Supported the Ilbert Bill and local self-government in India.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 10: Ripon's Reforms & Liberal Imperialism</div>"
+      },
+      "display_date": "1880 – 1885",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1885",
+        "month": "6",
+        "day": "9"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/William_Ewart_Gladstone_by_Elliott_%26_Fry.jpg/640px-William_Ewart_Gladstone_by_Elliott_%26_Fry.jpg",
+        "caption": "William E. Gladstone"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "ruler_1880_lord-ripon",
+      "start_date": {
+        "year": "1880",
+        "month": "6",
+        "day": "8"
+      },
+      "text": {
+        "headline": "Lord Ripon",
+        "text": "<p>Beloved liberal Viceroy ('Father of Local Self-Government'). Repealed the Vernacular Press Act in 1882; passed the First Factory Act (1881) improving child labor conditions; appointed the Hunter Education Commission (1882); strongly backed the Ilbert Bill (1883) to allow Indian judges to try Europeans.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 10: Ripon the Reformer</div>"
+      },
+      "display_date": "1880 – 1884",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1884",
+        "month": "12",
+        "day": "13"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Lord_Ripon.jpg/640px-Lord_Ripon.jpg",
+        "caption": "Lord Ripon"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1884_lord-dufferin",
+      "start_date": {
+        "year": "1884",
+        "month": "12",
+        "day": "13"
+      },
+      "text": {
+        "headline": "Lord Dufferin",
+        "text": "<p>Viceroy during whose tenure the Indian National Congress was founded in Bombay (December 1885) under the initiative of A. O. Hume. Later ridiculed the Congress as representing only a 'microscopic minority'. Completed the Third Anglo-Burmese War (1885).</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 11: Foundation of the Indian National Congress</div>"
+      },
+      "display_date": "1884 – 1888",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1888",
+        "month": "12",
+        "day": "10"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/The_Marquess_of_Dufferin_and_Ava.jpg/640px-The_Marquess_of_Dufferin_and_Ava.jpg",
+        "caption": "Lord Dufferin"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1886_lord-salisbury",
+      "start_date": {
+        "year": "1886",
+        "month": "7",
+        "day": "25"
+      },
+      "text": {
+        "headline": "Lord Salisbury",
+        "text": "<p>Conservative Prime Minister during the early years of the Indian National Congress. Oversaw passage of the Indian Councils Act 1892, which modestly expanded Indian non-official participation in provincial and imperial legislative councils.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 11: Constitutional Development (1892)</div>"
+      },
+      "display_date": "1886 – 1892",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1892",
+        "month": "8",
+        "day": "11"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Robert_Gascoyne-Cecil%2C_3rd_Marquess_of_Salisbury.jpg/640px-Robert_Gascoyne-Cecil%2C_3rd_Marquess_of_Salisbury.jpg",
+        "caption": "Lord Salisbury"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "evt_1889_jawaharlal_nehru",
+      "start_date": {
+        "year": "1889",
+        "month": "11",
+        "day": "14"
+      },
+      "text": {
+        "headline": "Jawaharlal Nehru",
+        "text": "<p>Central leader of the Indian National Congress alongside Gandhi, architect of the modern Indian nation-state, and India's first Prime Minister (1947–1964). Authored the historic 1929 Lahore 'Purna Swaraj' resolution, championed democratic socialism, non-alignment, and scientific temper.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 19: Civil Disobedience Movement & Round Table Conferences</div>"
+      },
+      "display_date": "14 Nov 1889 – 27 May 1964",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "National Leaders (Lifespans)",
+      "end_date": {
+        "year": "1964",
+        "month": "5",
+        "day": "27"
+      },
+      "media": {
+        "url": "https://youtu.be/6kXsPHuAUf4?si=Q662nyS08EgNfuuc",
+        "caption": "Documentary on Jawaharlal Nehru and the Freedom Movement",
+        "credit": "YouTube",
+        "thumbnail": "https://img.youtube.com/vi/6kXsPHuAUf4/hqdefault.jpg"
+      },
+      "background": {
+        "color": "#1a2228"
+      }
+    },
+    {
+      "id": "ruler_1895_lord-salisbury-final",
+      "start_date": {
+        "year": "1895",
+        "month": "6",
+        "day": "25"
+      },
+      "text": {
+        "headline": "Lord Salisbury (Final Ministry)",
+        "text": "<p>Conservative PM during severe Indian famines (1896–97 and 1899–1900) and the Bubonic Plague outbreak. Appointed the energetic imperialist Lord Curzon as Viceroy in 1899.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 10: Famines and Imperial Administration</div>"
+      },
+      "display_date": "1895 – 1902",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1902",
+        "month": "7",
+        "day": "11"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Robert_Gascoyne-Cecil%2C_3rd_Marquess_of_Salisbury.jpg/640px-Robert_Gascoyne-Cecil%2C_3rd_Marquess_of_Salisbury.jpg",
+        "caption": "Lord Salisbury"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "evt_1897_subhash_chandra_bose",
+      "start_date": {
+        "year": "1897",
+        "month": "1",
+        "day": "23"
+      },
+      "text": {
+        "headline": "Subhash Chandra Bose",
+        "text": "<p>Charismatic nationalist leader and former Congress President (Haripura 1938, Tripuri 1939). After ideological differences with Gandhi regarding armed resistance, he escaped India in 1941, formed the Forward Bloc, and subsequently revitalized the Indian National Army (Azad Hind Fauj) with the slogan 'Give me blood, and I will give you freedom!'.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 23: Nationalist Movement During World War II & INA</div>"
+      },
+      "display_date": "23 Jan 1897 – 18 Aug 1945",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "National Leaders (Lifespans)",
+      "end_date": {
+        "year": "1945",
+        "month": "8",
+        "day": "18"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Subhas_Chandra_Bose_NRB.jpg/640px-Subhas_Chandra_Bose_NRB.jpg",
+        "caption": "Netaji Subhash Chandra Bose",
+        "credit": "Wikimedia Commons"
+      },
+      "background": {
+        "color": "#1a241f"
+      }
+    },
+    {
+      "id": "ruler_1899_lord-curzon",
+      "start_date": {
+        "year": "1899",
+        "month": "1",
+        "day": "6"
+      },
+      "text": {
+        "headline": "Lord Curzon",
+        "text": "<p>Ambitious and imperialist Viceroy. Partitioned the province of Bengal in 1905 to weaken Indian nationalism, triggering the historic Swadeshi Movement. Passed the Indian Universities Act 1904, Ancient Monuments Preservation Act 1904, and set up the Department of Commerce and Industry.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 12: Era of Militant Nationalism & Partition of Bengal</div>"
+      },
+      "display_date": "1899 – 1905",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1905",
+        "month": "11",
+        "day": "18"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Lord_Curzon_1900.jpg/640px-Lord_Curzon_1900.jpg",
+        "caption": "Lord Curzon"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1902_arthur-balfour",
+      "start_date": {
+        "year": "1902",
+        "month": "7",
+        "day": "12"
+      },
+      "text": {
+        "headline": "Arthur Balfour",
+        "text": "<p>Conservative PM. Endorsed Lord Curzon's controversial Partition of Bengal in October 1905, which galvanized the radical Swadeshi and Boycott movements across India.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 12: Partition of Bengal & Swadeshi Movement</div>"
+      },
+      "display_date": "1902 – 1905",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1905",
+        "month": "12",
+        "day": "4"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Arthur_Balfour_by_George_Charles_Beresford.jpg/640px-Arthur_Balfour_by_George_Charles_Beresford.jpg",
+        "caption": "Arthur Balfour"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "ruler_1905_lord-minto-ii",
+      "start_date": {
+        "year": "1905",
+        "month": "11",
+        "day": "18"
+      },
+      "text": {
+        "headline": "Lord Minto II",
+        "text": "<p>Co-architect of the Morley-Minto Reforms (1909), which introduced separate electorates for Muslims. Encouraged the Shimla Deputation (1906) which resulted in the founding of the All-India Muslim League in Dhaka.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 13: Morley-Minto Reforms & Separate Electorates</div>"
+      },
+      "display_date": "1905 – 1910",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1910",
+        "month": "11",
+        "day": "23"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Gilbert_Elliot-Murray-Kynynmound%2C_4th_Earl_of_Minto.jpg/640px-Gilbert_Elliot-Murray-Kynynmound%2C_4th_Earl_of_Minto.jpg",
+        "caption": "Lord Minto II"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1908_h-h-asquith",
+      "start_date": {
+        "year": "1908",
+        "month": "4",
+        "day": "5"
+      },
+      "text": {
+        "headline": "H. H. Asquith",
+        "text": "<p>Liberal PM. Enacted the Morley-Minto Reforms (Indian Councils Act 1909), introducing separate electorates for Muslims. Arranged King George V's Delhi Durbar of 1911 that annulled the Partition of Bengal and transferred the capital to Delhi.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 13: Morley-Minto Reforms (1909)</div>"
+      },
+      "display_date": "1908 – 1916",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1916",
+        "month": "12",
+        "day": "5"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Herbert_Henry_Asquith_by_George_Charles_Beresford.jpg/640px-Herbert_Henry_Asquith_by_George_Charles_Beresford.jpg",
+        "caption": "H. H. Asquith"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "ruler_1910_lord-hardinge-ii",
+      "start_date": {
+        "year": "1910",
+        "month": "11",
+        "day": "23"
+      },
+      "text": {
+        "headline": "Lord Hardinge II",
+        "text": "<p>Annulled the Partition of Bengal in the 1911 Delhi Durbar attended by King George V. Transferred the imperial capital from Calcutta to Delhi (1911). Survived a revolutionary bomb attack by Rash Behari Bose at Chandni Chowk (1912). Welcomed Mahatma Gandhi's return from South Africa (January 1915).</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 14: First World War & Nationalist Response</div>"
+      },
+      "display_date": "1910 – 1916",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1916",
+        "month": "4",
+        "day": "4"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Charles_Hardinge%2C_1st_Baron_Hardinge_of_Penshurst.jpg/640px-Charles_Hardinge%2C_1st_Baron_Hardinge_of_Penshurst.jpg",
+        "caption": "Lord Hardinge II"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1916_lord-chelmsford",
+      "start_date": {
+        "year": "1916",
+        "month": "4",
+        "day": "4"
+      },
+      "text": {
+        "headline": "Lord Chelmsford",
+        "text": "<p>Formulated the Montagu-Chelmsford Reforms (Government of India Act 1919) instituting dyarchy. Enacted the repressive Anarchical and Revolutionary Crimes Act (Rowlatt Act) 1919; oversaw the Jallianwala Bagh massacre at Amritsar. Gandhi launched the Khilafat and Non-Cooperation Movement during his tenure.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 15: Emergence of Gandhi & Non-Cooperation</div>"
+      },
+      "display_date": "1916 – 1921",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1921",
+        "month": "4",
+        "day": "2"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lord_Chelmsford.jpg/640px-Lord_Chelmsford.jpg",
+        "caption": "Lord Chelmsford"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1916_david-lloyd-george",
+      "start_date": {
+        "year": "1916",
+        "month": "12",
+        "day": "6"
+      },
+      "text": {
+        "headline": "David Lloyd George",
+        "text": "<p>Coalition Prime Minister during and after WWI. Passed the Montagu-Chelmsford Reforms (Government of India Act 1919) establishing provincial dyarchy. Faced intense Indian fury after the Rowlatt Act and General Dyer's Jallianwala Bagh massacre, triggering Gandhi's nationwide Non-Cooperation Movement.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 15: Montagu-Chelmsford Reforms & Non-Cooperation</div>"
+      },
+      "display_date": "1916 – 1922",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1922",
+        "month": "10",
+        "day": "19"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/David_Lloyd_George_1919.jpg/640px-David_Lloyd_George_1919.jpg",
+        "caption": "David Lloyd George"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "evt_1919_rowlatt",
+      "start_date": {
+        "year": "1919",
+        "month": "4",
+        "day": "6"
+      },
+      "text": {
+        "headline": "Rowlatt Satyagraha",
+        "text": "<p>Nationwide hartal and satyagraha organized by Mahatma Gandhi against the Anarchical and Revolutionary Crimes Act of 1919 (Rowlatt Act), which authorized preventive detention and imprisonment without trial. It marked Gandhi's transition to all-India mass nationalist leadership.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 15: Emergence of Gandhi & Non-Violent Mass Movements</div>"
+      },
+      "display_date": "06 Apr 1919",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "Mass Movements & Satyagrahas",
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Demonstration_against_the_Rowlatt_Act.jpg/640px-Demonstration_against_the_Rowlatt_Act.jpg",
+        "caption": "Public demonstration against the Rowlatt Act (April 1919)",
+        "credit": "Wikimedia Commons"
+      },
+      "background": {
+        "color": "#211c18"
+      }
+    },
+    {
+      "id": "evt_1919_test-rowlatt-satyagraha",
+      "start_date": {
+        "year": "1919",
+        "month": "4",
+        "day": "6"
+      },
+      "text": {
+        "headline": "Test Rowlatt Satyagraha",
+        "text": "<p>Nationwide strike called by Mahatma Gandhi against Rowlatt Act.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum's Modern India</div>"
+      },
+      "display_date": "06 Apr 1919",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "Gandhi"
+    },
+    {
+      "id": "evt_1919_jallianwala_bagh",
+      "start_date": {
+        "year": "1919",
+        "month": "4",
+        "day": "13"
+      },
+      "text": {
+        "headline": "Jallianwala Bagh Massacre",
+        "text": "<p>British troops commanded by Brigadier-General Reginald Dyer opened fire on a peaceful crowd gathered at Jallianwala Bagh in Amritsar to celebrate Baisakhi and protest the arrest of leaders Dr. Saifuddin Kitchlew and Dr. Satyapal under the Rowlatt Act. Hundreds were killed and thousands injured, triggering widespread national outrage and Rabindranath Tagore renouncing his knighthood.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 15: Jallianwala Bagh Massacre & Hunter Committee</div>"
+      },
+      "display_date": "13 Apr 1919",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "Armed & Revolutionary",
+      "media": {
+        "url": "https://youtu.be/twxfswoZhFM?si=JiyZVSEch1diosCz",
+        "caption": "Archival Record: Jallianwala Bagh Massacre (13 April 1919)",
+        "credit": "YouTube",
+        "thumbnail": "https://img.youtube.com/vi/twxfswoZhFM/hqdefault.jpg"
+      },
+      "background": {
+        "color": "#2d1818"
+      }
+    },
+    {
+      "id": "ruler_1921_lord-reading",
+      "start_date": {
+        "year": "1921",
+        "month": "4",
+        "day": "2"
+      },
+      "text": {
+        "headline": "Lord Reading",
+        "text": "<p>Handled the suspension of the Non-Cooperation Movement after the Chauri Chaura incident (1922). Witnessed the birth of the Swaraj Party (1923 by C.R. Das and Motilal Nehru), the Kakori Train Action (1925), and communal riots.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 17: Emergence of Swarajists & Socialists</div>"
+      },
+      "display_date": "1921 – 1926",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1926",
+        "month": "4",
+        "day": "3"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Rufus_Isaacs%2C_1st_Marquess_of_Reading.jpg/640px-Rufus_Isaacs%2C_1st_Marquess_of_Reading.jpg",
+        "caption": "Lord Reading"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1924_stanley-baldwin",
+      "start_date": {
+        "year": "1924",
+        "month": "11",
+        "day": "4"
+      },
+      "text": {
+        "headline": "Stanley Baldwin",
+        "text": "<p>Conservative PM. Appointed the all-white Simon Commission (1927) without Indian representatives, leading to violent nationwide protests, the death of Lala Lajpat Rai, and the formulation of the Nehru Report (1928).</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 18: Simon Commission & Nehru Report</div>"
+      },
+      "display_date": "1924 – 1929",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1929",
+        "month": "6",
+        "day": "4"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Stanley_Baldwin_ggbain.jpg/640px-Stanley_Baldwin_ggbain.jpg",
+        "caption": "Stanley Baldwin"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "ruler_1926_lord-irwin",
+      "start_date": {
+        "year": "1926",
+        "month": "4",
+        "day": "3"
+      },
+      "text": {
+        "headline": "Lord Irwin",
+        "text": "<p>Faced the boycott of the Simon Commission (1928), the Nehru Report (1928), and the Lahore Congress declaration of Purna Swaraj (1929). Gandhi launched the historic Salt March to Dandi (1930) and Civil Disobedience. Concluded the Gandhi-Irwin Pact on 5 March 1931, suspending the movement in exchange for releasing political prisoners.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 19: Civil Disobedience & Gandhi-Irwin Pact</div>"
+      },
+      "display_date": "1926 – 1931",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1931",
+        "month": "4",
+        "day": "18"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Lord_Irwin_1930.jpg/640px-Lord_Irwin_1930.jpg",
+        "caption": "Lord Irwin"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1929_ramsay-macdonald",
+      "start_date": {
+        "year": "1929",
+        "month": "6",
+        "day": "5"
+      },
+      "text": {
+        "headline": "Ramsay MacDonald",
+        "text": "<p>Labour PM who convened the three Round Table Conferences in London (1930–1932) to negotiate Indian constitutional reforms. Issued the controversial Communal Award (August 1932) creating separate electorates for Depressed Classes, resolved through Gandhi and Ambedkar's Poona Pact.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 19: Round Table Conferences & Communal Award</div>"
+      },
+      "display_date": "1929 – 1935",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1935",
+        "month": "6",
+        "day": "7"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ramsay_MacDonald_1931.jpg/640px-Ramsay_MacDonald_1931.jpg",
+        "caption": "Ramsay MacDonald"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "ruler_1931_lord-willingdon",
+      "start_date": {
+        "year": "1931",
+        "month": "4",
+        "day": "18"
+      },
+      "text": {
+        "headline": "Lord Willingdon",
+        "text": "<p>Adopted harsh police measures and ordinances to crush resumed Civil Disobedience. Presided over the Second and Third Round Table Conferences, the Communal Award (1932), Poona Pact, and the formulation and enactment of the landmark Government of India Act 1935.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 20: Government of India Act 1935</div>"
+      },
+      "display_date": "1931 – 1936",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1936",
+        "month": "4",
+        "day": "18"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Freeman_Freeman-Thomas%2C_1st_Marquess_of_Willingdon.jpg/640px-Freeman_Freeman-Thomas%2C_1st_Marquess_of_Willingdon.jpg",
+        "caption": "Lord Willingdon"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1936_lord-linlithgow",
+      "start_date": {
+        "year": "1936",
+        "month": "4",
+        "day": "18"
+      },
+      "text": {
+        "headline": "Lord Linlithgow",
+        "text": "<p>Longest-serving Viceroy of India. Conducted 1937 provincial elections under the 1935 Act. Unilaterally committed India to World War II in 1939 without consulting Indian ministries. Formulated the August Offer (1940); crushed the Quit India Movement in August 1942 with military force; oversaw the disastrous 1943 Bengal Famine.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 21: Nationalist Response to War & August Offer</div>"
+      },
+      "display_date": "1936 – 1943",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1943",
+        "month": "10",
+        "day": "1"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Lord_Linlithgow_1938.jpg/640px-Lord_Linlithgow_1938.jpg",
+        "caption": "Lord Linlithgow"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1937_neville-chamberlain",
+      "start_date": {
+        "year": "1937",
+        "month": "5",
+        "day": "28"
+      },
+      "text": {
+        "headline": "Neville Chamberlain",
+        "text": "<p>Conservative PM at the outbreak of WWII (September 1939). Supported Viceroy Linlithgow's unilateral declaration dragging India into WWII without consulting elected provincial ministries, prompting the resignation of all Congress provincial ministries in protest.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 21: Nationalist Response to World War II</div>"
+      },
+      "display_date": "1937 – 1940",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1940",
+        "month": "5",
+        "day": "10"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Neville_Chamberlain_1938.jpg/640px-Neville_Chamberlain_1938.jpg",
+        "caption": "Neville Chamberlain"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "evt_1940_caxton_hall_udham_singh",
+      "start_date": {
+        "year": "1940",
+        "month": "3",
+        "day": "13"
+      },
+      "text": {
+        "headline": "Caxton Hall Assassination (Udham Singh)",
+        "text": "<p>Revolutionary Sardar Udham Singh assassinated Michael O'Dwyer (the former Lieutenant Governor of Punjab who endorsed the Jallianwala Bagh massacre) at Caxton Hall in London. Udham Singh was subsequently tried and hanged at Pentonville Prison, becoming a prominent martyr of the revolutionary struggle.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 15: Jallianwala Bagh & Revolutionary Retaliation</div>"
+      },
+      "display_date": "13 Mar 1940",
+      "group": "Indian Freedom Struggle",
+      "subgroup": "Armed & Revolutionary",
+      "media": {
+        "url": "https://youtu.be/bLWgKt1-SYo?si=u2oINIzWU-DH6bBh",
+        "caption": "Sardar Udham Singh and the Caxton Hall Retaliation",
+        "credit": "YouTube",
+        "thumbnail": "https://img.youtube.com/vi/bLWgKt1-SYo/hqdefault.jpg"
+      },
+      "background": {
+        "color": "#511f1f"
+      }
+    },
+    {
+      "id": "ruler_1940_winston-churchill",
+      "start_date": {
+        "year": "1940",
+        "month": "5",
+        "day": "10"
+      },
+      "text": {
+        "headline": "Winston Churchill",
+        "text": "<p>Wartime Coalition PM and staunch opponent of Indian self-rule. Declared he had not become Prime Minister to 'preside over the liquidation of the British Empire'. Dispatched the Cripps Mission (1942); imprisoned the entire Congress leadership after Quit India (1942). Presided over the man-made Bengal Famine of 1943 resulting in 3 million deaths.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 22: Quit India Movement & Famine of 1943</div>"
+      },
+      "display_date": "1940 – 1945",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1945",
+        "month": "7",
+        "day": "26"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Sir_Winston_Churchill_-_1941.jpg/640px-Sir_Winston_Churchill_-_1941.jpg",
+        "caption": "Winston Churchill"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "evt_1943_bengal_famine",
+      "start_date": {
+        "year": "1943"
+      },
+      "text": {
+        "headline": "Bengal Famine of 1943",
+        "text": "<p>Devastating famine in the Bengal province of British India during World War II, leading to the death of an estimated 2 to 3 million people from starvation and epidemic diseases. Exacerbated by British wartime procurement, denial policies, and Churchill's refusal to divert shipping relief, it remains one of the greatest colonial humanitarian catastrophes.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 23: War-Time Economy & Famines in British India</div>"
+      },
+      "display_date": "1943",
+      "group": "British Power & Policy",
+      "subgroup": "Acts & Policies",
+      "media": {
+        "url": "https://www.youtube.com/watch?v=bt2e0uEnv9A",
+        "caption": "Archival & Historical Analysis of the Bengal Famine",
+        "credit": "YouTube",
+        "thumbnail": "https://img.youtube.com/vi/bt2e0uEnv9A/hqdefault.jpg"
+      },
+      "background": {
+        "color": "#2a1a1a"
+      }
+    },
+    {
+      "id": "ruler_1943_lord-wavell",
+      "start_date": {
+        "year": "1943",
+        "month": "10",
+        "day": "1"
+      },
+      "text": {
+        "headline": "Lord Wavell",
+        "text": "<p>Convened the Shimla Conference (1945) to reconstitute the Executive Council (Wavell Plan). Received the Cabinet Mission (1946). Handled the Royal Indian Navy (RIN) Mutiny of 1946, the formation of the Interim Government under Nehru, and Direct Action Day riots.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 23: Post-War Deadlocks & Wavell Plan</div>"
+      },
+      "display_date": "1943 – 1947",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1947",
+        "month": "2",
+        "day": "21"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Archibald_Wavell_1944.jpg/640px-Archibald_Wavell_1944.jpg",
+        "caption": "Lord Wavell"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    },
+    {
+      "id": "ruler_1945_clement-attlee",
+      "start_date": {
+        "year": "1945",
+        "month": "7",
+        "day": "26"
+      },
+      "text": {
+        "headline": "Clement Attlee",
+        "text": "<p>Labour Prime Minister who granted Indian Independence. Dispatched the Cabinet Mission (1946). Made the historic announcement in the House of Commons on 20 February 1947 stating Britain would quit India by June 1948. Appointed Lord Mountbatten and steered the Indian Independence Act 1947 through Parliament.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 24: Post-War Surge & Road to Independence</div>"
+      },
+      "display_date": "1945 – 1951",
+      "group": "British Power & Policy",
+      "subgroup": "British PMs",
+      "end_date": {
+        "year": "1951",
+        "month": "10",
+        "day": "26"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Clement_Attlee_1945.jpg/640px-Clement_Attlee_1945.jpg",
+        "caption": "Clement Attlee"
+      },
+      "background": {
+        "color": "#181f28"
+      }
+    },
+    {
+      "id": "ruler_1947_lord-mountbatten",
+      "start_date": {
+        "year": "1947",
+        "month": "2",
+        "day": "21"
+      },
+      "text": {
+        "headline": "Lord Mountbatten",
+        "text": "<p>Last Viceroy of British India. Formulated the June 3rd Plan (Mountbatten Plan) partitioning the subcontinent into two dominions: India and Pakistan. Advanced the date of independence from June 1948 to August 15, 1947; oversaw Cyril Radcliffe's boundary demarcation and the tragic partition migration.</p>\n<div class=\"book-citation\"><i data-lucide=\"book-open\" class=\"w-3.5 h-3.5 text-secondary inline mr-1\"></i><strong>Book Note:</strong> Spectrum Chapter 25: Mountbatten Plan and Independence</div>"
+      },
+      "display_date": "Feb 1947 – Aug 1947",
+      "group": "British Power & Policy",
+      "subgroup": "Viceroys & Governors-General",
+      "end_date": {
+        "year": "1947",
+        "month": "8",
+        "day": "15"
+      },
+      "media": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Louis_Mountbatten%2C_1st_Earl_Mountbatten_of_Burma.jpg/640px-Louis_Mountbatten%2C_1st_Earl_Mountbatten_of_Burma.jpg",
+        "caption": "Lord Mountbatten"
+      },
+      "background": {
+        "color": "#201a14"
+      }
+    }
+  ],
+  "eras": [
+    {
+      "start_date": {
+        "year": "1707"
+      },
+      "end_date": {
+        "year": "1857"
+      },
+      "text": {
+        "headline": "Decline of Mughals & Company Rule (1707–1857)",
+        "text": "<p>Decline of the Mughal Empire, rise of regional kingdoms, expansion of the British East India Company, and the Great Revolt of 1857.</p>"
+      }
+    },
+    {
+      "start_date": {
+        "year": "1858"
+      },
+      "end_date": {
+        "year": "1918"
+      },
+      "text": {
+        "headline": "Direct Crown Rule & Early Nationalism (1858–1918)",
+        "text": "<p>Queen Victoria's Proclamation of 1858, modern English education, Indian National Congress (1885), Partition of Bengal (1905), and Swadeshi Movement.</p>"
+      }
+    },
+    {
+      "start_date": {
+        "year": "1919"
+      },
+      "end_date": {
+        "year": "1947"
+      },
+      "text": {
+        "headline": "Gandhian Era & Road to Freedom (1919–1947)",
+        "text": "<p>Mass mobilization, Rowlatt Satyagraha, Non-Cooperation Movement, Civil Disobedience Movement, Quit India, and Independence.</p>"
+      }
+    }
+  ],
+  "groups": [
+    "Political & Admin",
+    "Freedom Struggle",
+    "Mass Movements & Satyagrahas",
+    "Armed & Revolutionary",
+    "National Leaders (Lifespans)",
+    "Wars & Battles",
+    "Company Rule",
+    "British PMs",
+    "Viceroys & Governors-General",
+    "Acts & Policies",
+    "Social Reforms",
+    "General",
+    "Indian Freedom Struggle",
+    "British Power & Policy"
+  ],
+  "subgroups": [
+    "Constitutional Acts",
+    "Congress Sessions",
+    "Viceroys & Governors-General",
+    "National Leaders (Lifespans)",
+    "Mass Satyagrahas & Campaigns",
+    "Armed & Revolutionary",
+    "Peasant & Tribal Movements",
+    "Social & Religious Reforms",
+    "Economic & Land Revenue",
+    "Education & Press",
+    "Constitutional & Acts",
+    "British PMs",
+    "Mass Movements & Satyagrahas",
+    "Gandhi",
+    "Acts & Policies"
+  ]
+}

@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer">
-  <title>Modern History Timeline — ChronoLog</title>
+  <title>Modern History Timeline — ChronoLog (1707–1947)</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- TimelineJS3 CSS from Knight Lab CDN -->
-  <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
 
-  <!-- Custom Theme Styles -->
+
+  <!-- ChronoLog Custom Theme Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="timeline-page">
@@ -22,80 +21,223 @@
   <!-- Top Navigation Header -->
   <header class="site-header">
     <a href="index.html" class="brand">
-      <span class="brand-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon></svg></span>
+      <span class="brand-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="22" x2="21" y2="22"></line><line x1="6" y1="18" x2="6" y2="11"></line><line x1="10" y1="18" x2="10" y2="11"></line><line x1="14" y1="18" x2="14" y2="11"></line><line x1="18" y1="18" x2="18" y2="11"></line><polygon points="12 2 20 7 4 7"></polygon>
+        </svg>
+      </span>
       <span class="brand-title">ChronoLog</span>
       <span class="brand-sub">Reading Notes</span>
     </a>
 
-    <!-- Era Switcher Navigation -->
-    <nav class="era-nav">
-      <a href="ancient.html" class="era-link">Ancient</a>
-      <a href="medieval.html" class="era-link">Medieval</a>
-      <a href="modern.html" class="era-link active">Modern</a>
-    </nav>
+    <!-- Historical Period Dropdown Switcher -->
+    <div class="period-switcher-wrapper">
+      <select id="period-switcher" class="period-switcher-select" aria-label="Select Historical Period" onchange="if(this.value) window.location.href=this.value;">
+        <option value="ancient.html">Ancient History</option>
+        <option value="medieval.html">Medieval History</option>
+        <option value="modern.html" selected>Modern History</option>
+      </select>
+    </div>
+
+    <!-- View Switcher (Swimlane Canvas vs Revision Feed) -->
+    <div class="view-mode-switcher" role="tablist" aria-label="View Mode">
+      <button id="btn-view-canvas" class="view-btn active" role="tab" aria-selected="true" title="Interactive Multi-Swimlane Canvas (Key: 1)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/>
+        </svg>
+        <span>Swimlanes</span>
+      </button>
+      <button id="btn-view-feed" class="view-btn" role="tab" aria-selected="false" title="Vertical Revision Feed & Book Notes (Key: 2)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+        </svg>
+        <span>Revision Feed</span>
+      </button>
+    </div>
 
     <!-- Header Actions -->
     <div class="header-actions">
-      <!-- Category Jump Filter -->
-      <select id="category-filter" class="category-filter-select" title="Jump to topic or leader swimlane">
-        <option value="all">All Topics</option>
+      <!-- Zoom Controls -->
+      <div class="canvas-controls">
+        <button id="btn-zoom-in" class="ctrl-btn" title="Zoom In (Ctrl + Scroll Up)">+</button>
+        <button id="btn-zoom-out" class="ctrl-btn" title="Zoom Out (Ctrl + Scroll Down)">−</button>
+        <button id="btn-fit-all" class="ctrl-btn" title="Reset / Fit 1707–1947">Fit All</button>
+      </div>
+
+      <!-- Swimlane Jump Filter -->
+      <select id="category-filter" class="category-filter-select" title="Filter by historical track or leader">
+        <option value="all">All Swimlanes</option>
       </select>
 
       <span id="event-count" class="event-count-pill">Loading...</span>
 
-      <!-- Studio Editor Direct Link -->
-      <a href="editor.html" class="btn-studio" title="Open ChronoLog Studio Editor">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        <span>Studio</span>
-      </a>
-
       <!-- Fullscreen Mode Toggle -->
-      <button id="btn-fullscreen" class="btn-fullscreen" title="Toggle Fullscreen Reading Mode (Press F)">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      <button id="btn-fullscreen" class="btn-fullscreen" title="Toggle Fullscreen Mode (Press F)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+        </svg>
       </button>
     </div>
   </header>
 
-  <!-- Era Quick Jump Navigation Bar -->
-  <nav class="era-subnav" id="era-subnav" aria-label="Era Quick Jump Navigation">
-    <div class="era-subnav-inner" id="era-pills-container">
-      <!-- Dynamic Era Jump Buttons will be injected here -->
-    </div>
-    <div class="keyboard-hints" title="Keyboard Shortcuts for Readers">
-      <span class="kbd-hint"><kbd>←</kbd><kbd>→</kbd> Slide</span>
-      <span class="kbd-hint"><kbd>1-3</kbd> Era</span>
-      <span class="kbd-hint"><kbd>Home</kbd><kbd>End</kbd></span>
-      <span class="kbd-hint"><kbd>F</kbd> Fullscreen</span>
-    </div>
-  </nav>
-
-  <!-- TimelineJS Mount Area -->
-  <main class="timeline-wrapper">
-    <div id="timeline-embed"></div>
+  <!-- VIEW A: Dedicated Multi-Swimlane History Canvas Engine -->
+  <main class="timeline-wrapper" id="view-canvas-wrapper">
+    <!-- Dedicated History Canvas Viewport -->
+    <div id="timeline-vis"></div>
   </main>
 
-  <!-- Archival Study Lightbox Modal -->
-  <dialog id="study-lightbox" class="study-lightbox" aria-modal="true">
-    <div class="lightbox-dialog-card">
-      <button id="lightbox-close" class="lightbox-close-btn" title="Close Lightbox (Esc)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-      <div class="lightbox-media-container">
-        <img id="lightbox-img" src="" alt="Historical Artifact Inspection">
+  <!-- VIEW B: TimelineJS-Inspired Story Revision & Feed -->
+  <main class="feed-wrapper hidden" id="view-feed-wrapper">
+    <div class="feed-filter-bar">
+      <div class="feed-search-box">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="feed-search-input" placeholder="Search milestones, book notes, leaders (e.g. Gandhi, 1919, Rowlatt, Plassey)..." />
       </div>
-      <div class="lightbox-info-bar">
-        <h4 id="lightbox-headline" class="lightbox-headline"></h4>
-        <p id="lightbox-caption" class="lightbox-caption"></p>
-        <span id="lightbox-credit" class="lightbox-credit"></span>
+
+      <!-- Feed Submode Switcher: 📖 Story Slide Mode vs 📋 Overview Grid Mode -->
+      <div class="feed-mode-toggle" role="tablist" aria-label="Revision Sub-mode">
+        <button id="feed-mode-story" class="feed-submode-btn active" role="tab" aria-selected="true" title="TimelineJS Story Slides (Key: ← / →)">
+          <span>📖 Story Slides</span>
+        </button>
+        <button id="feed-mode-grid" class="feed-submode-btn" role="tab" aria-selected="false" title="Overview Decade Grid">
+          <span>📋 Grid View</span>
+        </button>
+      </div>
+
+      <div class="feed-filter-actions">
+        <select id="feed-group-filter" class="feed-select">
+          <option value="all">All Swimlanes</option>
+        </select>
+        <span id="feed-counter" class="feed-counter-badge"></span>
       </div>
     </div>
-  </dialog>
 
-  <!-- TimelineJS CDN Script -->
-  <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <!-- TimelineJS Story Carousel View (Active Default) -->
+    <div id="story-carousel-view" class="story-carousel-container">
+      <div class="story-main-stage">
+        <!-- Floating Prev Navigation Chevron -->
+        <button id="story-nav-prev" class="story-nav-btn story-nav-prev" title="Previous Milestone (← Arrow Key)" aria-label="Previous Milestone">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span class="story-nav-preview" id="story-prev-label">Prev</span>
+        </button>
 
-  <!-- Data and Init Scripts -->
+        <!-- Current Story Slide Card (Split 2-Section Layout) -->
+        <article id="story-current-slide" class="story-slide-card">
+          <!-- LEFT SECTION: Media Showcase -->
+          <div class="story-slide-media" id="story-media-box"></div>
+
+          <!-- RIGHT SECTION: Historical Context & Citations -->
+          <div class="story-slide-content">
+            <header class="story-slide-header">
+              <div class="story-meta-row">
+                <span id="story-group-badge" class="modal-badge">Modern History</span>
+                <span id="story-date-badge" class="modal-date"></span>
+                <span id="story-slide-index" class="story-index-pill">1 / 40</span>
+              </div>
+              <h2 id="story-headline" class="story-headline"></h2>
+            </header>
+
+            <div class="story-slide-body" id="story-body-box"></div>
+
+            <div class="story-slide-footer">
+              <div id="story-connected-dots" class="story-connected-dots"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Floating Next Navigation Chevron -->
+        <button id="story-nav-next" class="story-nav-btn story-nav-next" title="Next Milestone (→ Arrow Key)" aria-label="Next Milestone">
+          <span class="story-nav-preview" id="story-next-label">Next</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- TimelineJS Bottom Interactive Scrub Strip -->
+      <nav class="story-scrub-strip-wrapper" aria-label="Timeline Milestone Navigator">
+        <div id="story-scrub-strip" class="story-scrub-strip"></div>
+      </nav>
+    </div>
+
+    <!-- Overview Decade Grid View (Toggled via Grid View button) -->
+    <div id="revision-feed-container" class="feed-container hidden"></div>
+  </main>
+
+  <!-- Centered Event Detail Popup Modal (Split 2-Section Design: Left Media / Right Content) -->
+  <div id="event-modal-wrapper" class="modal-wrapper" aria-hidden="true">
+    <div id="modal-backdrop" class="modal-backdrop"></div>
+
+    <div class="modal-dialog-container">
+      <!-- Flanking Prev Navigator Attached to Left Edge of Popup (No Gaps) -->
+      <button id="modal-btn-prev" class="modal-nav-btn modal-nav-prev" title="Previous Milestone (← Key)" aria-label="Previous Milestone">
+        <div class="modal-nav-arrow">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </div>
+        <div class="modal-nav-details">
+          <span id="modal-prev-date" class="modal-nav-date"></span>
+          <span id="modal-prev-title" class="modal-nav-title"></span>
+        </div>
+      </button>
+
+      <div id="event-modal-card" class="modal-card modal-split-card" role="dialog" aria-labelledby="modal-headline">
+        
+        <!-- Close Button (Top-Right Floating) -->
+        <button id="modal-close" class="modal-close-btn" title="Close Popup (Esc)" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- LEFT SECTION: Media Display (YouTube Video or Archival Portrait) -->
+        <section class="modal-section-media">
+          <div id="modal-media-container" class="modal-media-frame"></div>
+        </section>
+
+        <!-- RIGHT SECTION: Historical Content, Citations & Analysis -->
+        <section class="modal-section-content">
+          <header class="modal-content-header">
+            <div class="modal-meta-tags">
+              <span id="modal-group-badge" class="modal-badge">Modern History</span>
+              <span id="modal-date" class="modal-date"></span>
+            </div>
+            <h2 id="modal-headline" class="modal-headline"></h2>
+          </header>
+
+          <div class="modal-content-scroll">
+            <div id="modal-body" class="modal-body-text"></div>
+            <!-- Connected Dots Relationship Pills -->
+            <div id="modal-connected-dots" class="modal-connected-dots"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Flanking Next Navigator Attached to Right Edge of Popup (No Gaps) -->
+      <button id="modal-btn-next" class="modal-nav-btn modal-nav-next" title="Next Milestone (→ Key)" aria-label="Next Milestone">
+        <div class="modal-nav-details">
+          <span id="modal-next-date" class="modal-nav-date"></span>
+          <span id="modal-next-title" class="modal-nav-title"></span>
+        </div>
+        <div class="modal-nav-arrow">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+
+
+
+  <!-- ChronoLog Data & Logic Scripts -->
   <script src="js/modern-data.js"></script>
-  <script src="js/timeline-init.js"></script>
+  <script src="js/timeline-vis.js"></script>
+  <script src="js/revision-feed.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+id: ruler_1916_david-lloyd-george
+headline: David Lloyd George
+start_date:
+  year: 1916
+  month: 12
+  day: 6
+end_date:
+  year: 1922
+  month: 10
+  day: 19
+display_date: 1916 – 1922
+group: British Power & Policy
+subgroup: British PMs
+notes: Coalition Prime Minister during and after WWI. Passed the Montagu-Chelmsford
+  Reforms (Government of India Act 1919) establishing provincial dyarchy. Faced intense
+  Indian fury after the Rowlatt Act and General Dyer's Jallianwala Bagh massacre,
+  triggering Gandhi's nationwide Non-Cooperation Movement.
+book_note: 'Spectrum Chapter 15: Montagu-Chelmsford Reforms & Non-Cooperation'
+media:
+  url: https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/David_Lloyd_George_1919.jpg/640px-David_Lloyd_George_1919.jpg
+  caption: David Lloyd George
+background:
+  color: '#181f28'

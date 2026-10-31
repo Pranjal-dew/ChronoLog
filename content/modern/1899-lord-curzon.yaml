@@ -1,0 +1,23 @@
+id: ruler_1899_lord-curzon
+headline: Lord Curzon
+start_date:
+  year: 1899
+  month: 1
+  day: 6
+end_date:
+  year: 1905
+  month: 11
+  day: 18
+display_date: 1899 – 1905
+group: British Power & Policy
+subgroup: Viceroys & Governors-General
+notes: Ambitious and imperialist Viceroy. Partitioned the province of Bengal in 1905
+  to weaken Indian nationalism, triggering the historic Swadeshi Movement. Passed
+  the Indian Universities Act 1904, Ancient Monuments Preservation Act 1904, and set
+  up the Department of Commerce and Industry.
+book_note: 'Spectrum Chapter 12: Era of Militant Nationalism & Partition of Bengal'
+media:
+  url: https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Lord_Curzon_1900.jpg/640px-Lord_Curzon_1900.jpg
+  caption: Lord Curzon
+background:
+  color: '#201a14'

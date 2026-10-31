@@ -1,0 +1,24 @@
+id: ruler_1940_winston-churchill
+headline: Winston Churchill
+start_date:
+  year: 1940
+  month: 5
+  day: 10
+end_date:
+  year: 1945
+  month: 7
+  day: 26
+display_date: 1940 – 1945
+group: British Power & Policy
+subgroup: British PMs
+notes: Wartime Coalition PM and staunch opponent of Indian self-rule. Declared he
+  had not become Prime Minister to 'preside over the liquidation of the British Empire'.
+  Dispatched the Cripps Mission (1942); imprisoned the entire Congress leadership
+  after Quit India (1942). Presided over the man-made Bengal Famine of 1943 resulting
+  in 3 million deaths.
+book_note: 'Spectrum Chapter 22: Quit India Movement & Famine of 1943'
+media:
+  url: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Sir_Winston_Churchill_-_1941.jpg/640px-Sir_Winston_Churchill_-_1941.jpg
+  caption: Winston Churchill
+background:
+  color: '#181f28'

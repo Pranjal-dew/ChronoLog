@@ -22,12 +22,14 @@
       <span class="brand-sub">Reading Notes</span>
     </a>
 
-    <!-- Era Switcher Navigation -->
-    <nav class="era-nav">
-      <a href="ancient.html" class="era-link">Ancient</a>
-      <a href="medieval.html" class="era-link active">Medieval</a>
-      <a href="modern.html" class="era-link">Modern</a>
-    </nav>
+    <!-- Historical Period Dropdown Switcher -->
+    <div class="period-switcher-wrapper">
+      <select id="period-switcher" class="period-switcher-select" aria-label="Select Historical Period" onchange="if(this.value) window.location.href=this.value;">
+        <option value="ancient.html">Ancient History</option>
+        <option value="medieval.html" selected>Medieval History</option>
+        <option value="modern.html">Modern History</option>
+      </select>
+    </div>
 
     <div class="header-actions">
       <span class="event-count-pill">Planned Phase</span>

@@ -3,14 +3,21 @@
 Thumbs.db
 desktop.ini
 
-# Logs & temp files
+# Python cache & virtual environments
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Application Image & Network Cache
+.cache/
+
+# Logs & temporary files
 *.log
 temp_*
 *.tmp
 
-# Dependency directories
+# Dependencies
 node_modules/
-.venv/
-
-# Private local tools
-editor.html

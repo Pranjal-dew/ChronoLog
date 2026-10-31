@@ -1,0 +1,22 @@
+id: ruler_1924_stanley-baldwin
+headline: Stanley Baldwin
+start_date:
+  year: 1924
+  month: 11
+  day: 4
+end_date:
+  year: 1929
+  month: 6
+  day: 4
+display_date: 1924 – 1929
+group: British Power & Policy
+subgroup: British PMs
+notes: Conservative PM. Appointed the all-white Simon Commission (1927) without Indian
+  representatives, leading to violent nationwide protests, the death of Lala Lajpat
+  Rai, and the formulation of the Nehru Report (1928).
+book_note: 'Spectrum Chapter 18: Simon Commission & Nehru Report'
+media:
+  url: https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Stanley_Baldwin_ggbain.jpg/640px-Stanley_Baldwin_ggbain.jpg
+  caption: Stanley Baldwin
+background:
+  color: '#181f28'
